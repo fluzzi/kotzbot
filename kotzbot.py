@@ -8,7 +8,7 @@ token = os.getenv('DISCORD_TOKEN')
 import json
 with open('dicts.json') as json_file:
     data = json.load(json_file)
-bot = commands.Bot(command_prefix=commands.when_mentioned)
+bot = commands.Bot(command_prefix=commands.when_mentioned, case_insensitive=True)
 bot.remove_command('help')
 def get_cosmo(cosmo):
     todos = "\n"
@@ -57,18 +57,18 @@ def get_cosmo(cosmo):
     start = 1
     location = 2
     result = ""
-    if cosmo == 'list':
+    if cosmo.lower() == 'list':
         for key in data['cosmoen']:
             todos = todos + key + ', '
         todos = todos.rstrip(' ').rstrip(',')
         return todos
-    if cosmo == 'lista':
+    if cosmo.lower() == 'lista':
         for key in data['cosmoes']:
             todos = todos + key + ', '
         todos = todos.rstrip(' ').rstrip(',')
         return todos
-    elif cosmo in data['cosmoboth']:
-        days = list(map(int,str(data['cdays'][data['cosmoboth'][cosmo]])))
+    elif cosmo.lower() in data['cosmoboth']:
+        days = list(map(int,str(data['cdays'][data['cosmoboth'][cosmo.lower()]])))
         if days[0] == 0:
             result= '\n Available on boxes and other events, no shrine or titans \n Disponible en cajas y otros eventos, no esta en Altar o Titanes.'
         else:
@@ -76,8 +76,8 @@ def get_cosmo(cosmo):
                 result= result + '\n' + dya[days[start]] + ': ' + plugar[days[location]]
                 start += 2
                 location += 2
-    elif cosmo in data['cosmoes']:
-        days = list(map(int,str(data['cdays'][data['cosmoes'][cosmo]])))
+    elif cosmo.lower() in data['cosmoes']:
+        days = list(map(int,str(data['cdays'][data['cosmoes'][cosmo.lower()]])))
         if days[0] == 0:
             result= '\n Disponible en cajas y otros eventos, no esta en Altar o Titanes.'
         else:
@@ -85,8 +85,8 @@ def get_cosmo(cosmo):
                 result= result + '\n' + dia[days[start]] + ': ' + lugar[days[location]]
                 start += 2
                 location += 2
-    elif cosmo in data['cosmoen']:
-        days = list(map(int,str(data['cdays'][data['cosmoen'][cosmo]])))
+    elif cosmo.lower() in data['cosmoen']:
+        days = list(map(int,str(data['cdays'][data['cosmoen'][cosmo.lower()]])))
         if days[0] == 0:
             result= '\n Available on boxes and other events, no shrine or titans.'
         else:
@@ -102,23 +102,23 @@ def get_cosmo(cosmo):
 def get_guide(char,lang):
     todos = ""
     if lang == "en":
-        if char == 'list':
+        if char.lower() == 'list':
             for key in data['guidedic']:
                 todos = todos + key + ', '
             todos = todos.rstrip(' ').rstrip(',')
             return todos
-        elif char in data['guidedic']:
-            return data['guidedic'][char]
+        elif char.lower() in data['guidedic']:
+            return data['guidedic'][char.lower()]
         else:
             return 0
     elif lang == "es":
-        if char == 'lista':
+        if char.lower() == 'lista':
             for key in data['guiadic']:
                 todos = todos + key + ', '
             todos = todos.rstrip(' ').rstrip(',')
             return todos
-        elif char in data['guiadic']:
-            return data['guiadic'][char]
+        elif char.lower() in data['guiadic']:
+            return data['guiadic'][char.lower()]
         else:
             return 0
         return
