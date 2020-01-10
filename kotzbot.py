@@ -139,7 +139,7 @@ async def ayuda(ctx):
     msg = msg.format(ctx.message)
     await ctx.send(msg)
 
-@bot.command(pass_context=True)
+@bot.command(pass_context=True, aliases=['guía'])
 async def guia(ctx, * , arg = None):
     real = get_guide(arg,"es")
     if real == 0:
