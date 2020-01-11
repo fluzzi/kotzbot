@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import discord
 import os
+import datetime
 from discord.ext import commands
 from dotenv import load_dotenv
 load_dotenv()
@@ -12,6 +13,24 @@ bot = commands.Bot(command_prefix=commands.when_mentioned, case_insensitive=True
 bot.remove_command('help')
 def get_cosmo(cosmo):
     todos = "\n"
+    dayc = {
+            'Monday': 1,
+            'Tuesday': 2,
+            'Wednesday': 3,
+            'Thursday': 4,
+            'Friday': 5,
+            'Saturday': 6,
+            'Sunday': 7
+        }
+    diac = {
+            'Lunes': 1,
+            'Martes': 2,
+            'Miercoles': 3,
+            'Jueves': 4,
+            'Viernes': 5,
+            'Sabado': 6,
+            'Domingo': 7
+        }
     day = {
             1: 'Monday',
             2: 'Tuesday',
@@ -57,6 +76,14 @@ def get_cosmo(cosmo):
     start = 1
     location = 2
     result = ""
+    if cosmo.lower() == 'hoy':
+        return get_today('es')
+    if cosmo.lower() == 'today':
+        return get_today('en')
+    if cosmo.lower().capitalize() in diac:
+        return get_today('es',diac[cosmo.lower().capitalize()])
+    if cosmo.lower().capitalize() in dayc:
+        return get_today('en',dayc[cosmo.lower().capitalize()])
     if cosmo.lower() == 'list':
         for key in data['cosmoen']:
             todos = todos + key + ', '
@@ -123,19 +150,59 @@ def get_guide(char,lang):
             return 0
         return
 
+def get_today(lang,date = datetime.datetime.today().isoweekday()):
+    if lang == "es":
+        titans = "\nTitanes: "
+        shrine = "Altar: "
+    if lang == "en":
+        titans = "\nTitans: "
+        shrine = "Shrine: "
+    result = ""
+    for key in data['cdays']:
+        start1 = 1
+        location1 = 2
+        start2 = 1
+        location2 = 2
+        days = list(map(int,str(data['cdays'][key])))
+        if days[0] > 0:
+            for _ in range(days[0]):
+                if (days[location1] == 0 or days[location1] == 2) and days[start1] == date:
+                    if lang == "es":
+                        titans = titans  + list(data['cosmoes'].keys())[list(data['cosmoes'].values()).index(key)] + ', '
+                    elif lang == "en":
+                        titans = titans + list(data['cosmoen'].keys())[list(data['cosmoen'].values()).index(key)] + ', '
+                    break
+                else:
+                    start1 += 2
+                    location1 += 2
+            for _ in range(days[0]):
+                if (days[location2] == 1 or days[location2] == 2) and days[start2] == date:
+                    if lang == "es":
+                        shrine = shrine + list(data['cosmoes'].keys())[list(data['cosmoes'].values()).index(key)] + ', '
+                    elif lang == "en":
+                        shrine = shrine + list(data['cosmoen'].keys())[list(data['cosmoen'].values()).index(key)] + ', '
+                    break
+                else:
+                    start2 += 2
+                    location2 += 2
+    titans = titans.rstrip(' ').rstrip(',')
+    shrine = shrine.rstrip(' ').rstrip(',')
+    result = titans + '\n' + shrine
+    return result
+
 @bot.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(bot))
 
 @bot.command(pass_context=True)
 async def help(ctx):
-    msg = ('{0.author.mention} \n HELP\n cosmo list -> get list of cosmo names\n cosmo name of cosmo -> get cosmo release date and location\n guide list -> get list of characters name\n guide character name -> get character youtube guide')
+    msg = ('{0.author.mention} \n HELP\n cosmo list -> get list of cosmo names\n cosmo name of cosmo -> get cosmo release date and location\n cosmo today/weekday -> get cosmo released on specific day\n guide list -> get list of characters name\n guide character name -> get character youtube guide')
     msg = msg.format(ctx.message)
     await ctx.send(msg)
 
 @bot.command(pass_context=True)
 async def ayuda(ctx):
-    msg = ('{0.author.mention} \n AYUDA\n cosmo lista -> lista los nombres de los cosmos\n cosmo nombre de cosmo -> muestra los dias y lugares del cosmo\n guia lista -> lista los nombres de los personajes\n guia nombre del personaje -> muestra el video del analisis del personaje')
+    msg = ('{0.author.mention} \n AYUDA\n cosmo lista -> lista los nombres de los cosmos\n cosmo nombre de cosmo -> muestra los dias y lugares del cosmo\n cosmo hoy/dia de la semana -> muestra los cosmos que salen ese dia\n guia lista -> lista los nombres de los personajes\n guia nombre del personaje -> muestra el video del analisis del personaje')
     msg = msg.format(ctx.message)
     await ctx.send(msg)
 
