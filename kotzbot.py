@@ -192,13 +192,13 @@ def get_today(lang,date = datetime.datetime.today().isoweekday()):
 
 def get_legion(server = ""):
     result = ""
-    if server == "list":
+    if server == "lista" or server == "list":
         for key in data['legion']:
             result = result + key.upper() + ': ' + data['legion'][key] + '\n'
     elif server.lower() in data['legion']:
         result = server.upper() + ': ' + data['legion'][server.lower()]
     else:
-        result = 'Invalid legion..'
+        result = 'La legion no existe en ' + server.upper()
     return result
 
 @bot.event
