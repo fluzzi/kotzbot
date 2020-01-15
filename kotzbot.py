@@ -190,6 +190,17 @@ def get_today(lang,date = datetime.datetime.today().isoweekday()):
     result = titans + '\n' + shrine
     return result
 
+def get_legion(server = ""):
+    result = ""
+    if server == "list":
+        for key in data['legion']:
+            result = result + key.upper() + ': ' + data['legion'][key] + '\n'
+    elif server.lower() in data['legion']:
+        result = server.upper() + ': ' + data['legion'][server.lower()]
+    else:
+        result = 'Invalid legion..'
+    return result
+
 @bot.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(bot))
@@ -239,4 +250,9 @@ async def cosmo(ctx, *, arg = None):
         msg = msg.format(ctx.message)
         await ctx.send(msg)
 
+@bot.command(pass_context=True)
+async def legion(ctx, *, arg = None):
+    msg = (get_legion(arg))
+    msg = msg.format(ctx.message)
+    await ctx.send(msg)
 bot.run(token)
