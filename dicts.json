@@ -46,7 +46,9 @@
         "vulcanchain": 26070,
         "whitemist": 23171,
         "windelf": 24171,
-        "windflower": 0
+        "windflower": 0,
+        "watercurtain": 22171,
+        "bookofdead": 22171
     },
     "cosmoboth": {
         "felina": "felina",
@@ -101,7 +103,9 @@
         "vulcan chain": "vulcanchain",
         "white mist": "whitemist",
         "wind elf": "windelf",
-        "windflower": "windflower"
+        "windflower": "windflower",
+        "water curtain": "watercurtain",
+        "book of the dead": "bookofdead"
     },
     "cosmoes": {
         "anemona": "windflower",
@@ -150,7 +154,9 @@
         "seiya": "seiya",
         "sello espiritual": "spiritprint",
         "serpiente dos cuernos": "2hornsnake",
-        "tenacidad": "tenacity"
+        "tenacidad": "tenacity",
+        "cortina de agua": "watercurtain",
+        "libro de los muertos": "bookofdead"
     },
     "guiadic": {
         "afrodita": "https://youtu.be/KR4UfiDGOes",

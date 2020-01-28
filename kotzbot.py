@@ -9,7 +9,7 @@ token = os.getenv('DISCORD_TOKEN')
 import json
 with open('dicts.json') as json_file:
     data = json.load(json_file)
-bot = commands.Bot(command_prefix=commands.when_mentioned, case_insensitive=True)
+bot = commands.Bot(command_prefix=commands.when_mentioned_or('silla-san ','silla san '), case_insensitive=True)
 bot.remove_command('help')
 def get_cosmo(cosmo):
     todos = "\n"
