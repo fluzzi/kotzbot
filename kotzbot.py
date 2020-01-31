@@ -8,7 +8,7 @@ load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 prefix = ['silla-san ','silla san ','Silla-san ','Silla-San ','Silla san ','Silla San ','SILLA SAN ','SILLA-SAN ','silla-sama ','silla sama','Silla-sama ','Silla-Sama ','Silla sama ','Silla Sama ','SILLA SAMA ','SILLA-SAMA ']
 prefixes = ['silla san','silla-san','silla sama','silla-sama']
-comms = ['help','ayuda','guia','guide','cosmo','legion']
+comms = ['help','ayuda','guia','guide','cosmo','legion','guía','legión']
 import json
 with open('dicts.json') as json_file:
     data = json.load(json_file)
@@ -253,7 +253,7 @@ async def cosmo(ctx, *, arg = None):
         msg = msg.format(ctx.message)
         await ctx.send(msg)
 
-@bot.command(pass_context=True)
+@bot.command(pass_context=True, aliases=['legión'])
 async def legion(ctx, *, arg = None):
     msg = (get_legion(arg))
     msg = msg.format(ctx.message)
@@ -272,14 +272,16 @@ async def on_message(message):
             elif ("te odio" in message.content):
                 msg = (message.author.mention + ' no me odies \U0001F61E')
             else:
-                msg = ('<:androlSillaSan:672514784133906450>')
+                # msg = ('<:androlSillaSan:672514784133906450>')
+                return
         else:
             if ("te amo" in message.content) or ("te quiero" in message.content):
                 msg = (message.author.mention + ' ok gracias')
             elif ("te odio" in message.content):
                 msg = (message.author.mention + ' y yo a ti, insignificante humano')
             else:
-                msg = ('<:androlSillaSan:672514784133906450>')
+                # msg = ('<:androlSillaSan:672514784133906450>')
+                return
         await message.channel.send(msg)
     await bot.process_commands(message)
 
