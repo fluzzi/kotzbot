@@ -9,7 +9,7 @@ token = os.getenv('DISCORD_TOKEN')
 import json
 with open('dicts.json') as json_file:
     data = json.load(json_file)
-bot = commands.Bot(command_prefix=commands.when_mentioned_or('silla-san ','silla san ','Silla-san ','Silla-San ','Silla san ','Silla San ','SILLA SAN ','SILLA-SAN ', ':androlSillaSan:'), case_insensitive=True)
+bot = commands.Bot(command_prefix=commands.when_mentioned_or('silla-san ','silla san ','Silla-san ','Silla-San ','Silla san ','Silla San ','SILLA SAN ','SILLA-SAN '), case_insensitive=True)
 bot.remove_command('help')
 def get_cosmo(cosmo):
     todos = "\n"
@@ -249,6 +249,25 @@ async def cosmo(ctx, *, arg = None):
         msg = ('{0.author.mention} Cosmo ' + arg.capitalize() + ':' + real)
         msg = msg.format(ctx.message)
         await ctx.send(msg)
+
+@bot.command(pass_context=True)
+async def te(ctx, *, arg = None):
+    if ("Alezar#8727" == str(ctx.author)) or ("Gederico#5402" == str(ctx.author)):
+        if ("amo" in arg) or ("quiero" in arg):
+            msg = ('{0.author.mention} y yo a ti \U0001F60D')
+        elif ("odio" in arg):
+            msg = ('{0.author.mention} no me odies \U0001F61E')
+        else:
+            msg = ('<:androlSillaSan:672514784133906450>')
+    else:
+        if ("amo" in arg) or ("quiero" in arg):
+            msg = ('{0.author.mention} ok gracias')
+        elif ("odio" in arg):
+            msg = ('{0.author.mention} y yo a ti, insignificante humano')
+        else:
+            msg = ('<:androlSillaSan:672514784133906450>')
+    msg = msg.format(ctx.message)
+    await ctx.send(msg)
 
 @bot.command(pass_context=True)
 async def legion(ctx, *, arg = None):
