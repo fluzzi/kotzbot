@@ -6,10 +6,13 @@ from discord.ext import commands
 from dotenv import load_dotenv
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
+prefix = ['silla-san ','silla san ','Silla-san ','Silla-San ','Silla san ','Silla San ','SILLA SAN ','SILLA-SAN ','silla-sama ','silla sama','Silla-sama ','Silla-Sama ','Silla sama ','Silla Sama ','SILLA SAMA ','SILLA-SAMA ']
+prefixes = ['silla san','silla-san','silla sama','silla-sama']
+comms = ['help','ayuda','guia','guide','cosmo','legion']
 import json
 with open('dicts.json') as json_file:
     data = json.load(json_file)
-bot = commands.Bot(command_prefix=commands.when_mentioned_or('silla-san ','silla san ','Silla-san ','Silla-San ','Silla san ','Silla San ','SILLA SAN ','SILLA-SAN '), case_insensitive=True)
+bot = commands.Bot(command_prefix=commands.when_mentioned_or(*prefix), case_insensitive=True)
 bot.remove_command('help')
 def get_cosmo(cosmo):
     todos = "\n"
@@ -251,27 +254,33 @@ async def cosmo(ctx, *, arg = None):
         await ctx.send(msg)
 
 @bot.command(pass_context=True)
-async def te(ctx, *, arg = None):
-    if ("Alezar#8727" == str(ctx.author)) or ("Gederico#5402" == str(ctx.author)):
-        if ("amo" in arg) or ("quiero" in arg):
-            msg = ('{0.author.mention} y yo a ti \U0001F60D')
-        elif ("odio" in arg):
-            msg = ('{0.author.mention} no me odies \U0001F61E')
-        else:
-            msg = ('<:androlSillaSan:672514784133906450>')
-    else:
-        if ("amo" in arg) or ("quiero" in arg):
-            msg = ('{0.author.mention} ok gracias')
-        elif ("odio" in arg):
-            msg = ('{0.author.mention} y yo a ti, insignificante humano')
-        else:
-            msg = ('<:androlSillaSan:672514784133906450>')
-    msg = msg.format(ctx.message)
-    await ctx.send(msg)
-
-@bot.command(pass_context=True)
 async def legion(ctx, *, arg = None):
     msg = (get_legion(arg))
     msg = msg.format(ctx.message)
     await ctx.send(msg)
+
+@bot.event
+async def on_message(message):
+    if message.author.bot:
+        return
+    elif any(i in message.content.lower() for i in comms):
+        pass
+    elif bot.user in message.mentions or any (i in message.content.lower() for i in prefixes):
+        if ("Alezar#8727" == str(message.author)) or ("Gederico#5402" == str(message.author)):
+            if ("te amo" in message.content) or ("te quiero" in message.content):
+                msg = (message.author.mention + ' y yo a ti \U0001F60D')
+            elif ("te odio" in message.content):
+                msg = (message.author.mention + ' no me odies \U0001F61E')
+            else:
+                msg = ('<:androlSillaSan:672514784133906450>')
+        else:
+            if ("te amo" in message.content) or ("te quiero" in message.content):
+                msg = (message.author.mention + ' ok gracias')
+            elif ("te odio" in message.content):
+                msg = (message.author.mention + ' y yo a ti, insignificante humano')
+            else:
+                msg = ('<:androlSillaSan:672514784133906450>')
+        await message.channel.send(msg)
+    await bot.process_commands(message)
+
 bot.run(token)
