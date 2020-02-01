@@ -2,8 +2,10 @@
 import discord
 import os
 import datetime
+import langdetect
 from discord.ext import commands
 from dotenv import load_dotenv
+from langdetect import detect
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 prefix = ['silla-san ','silla san ','Silla-san ','Silla-San ','Silla san ','Silla San ','SILLA SAN ','SILLA-SAN ','silla-sama ','silla sama','Silla-sama ','Silla-Sama ','Silla sama ','Silla Sama ','SILLA SAMA ','SILLA-SAMA ']
@@ -283,6 +285,15 @@ async def on_message(message):
                 # msg = ('<:androlSillaSan:672514784133906450>')
                 return
         await message.channel.send(msg)
+    elif bot.user not in message.mentions:
+        if (message.channel.id == 565536811242487840):
+            if detect(message.content) == 'es':
+                msg = (message.author.mention + ' This is an english only channel // Este canal es solo en ingles\n para español usar <#624818561961164810>')
+                await message.channel.send(msg)
+            else:
+                return
+        else:
+            return
     await bot.process_commands(message)
 
 bot.run(token)
