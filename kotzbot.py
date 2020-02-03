@@ -6,6 +6,7 @@ import langdetect
 from discord.ext import commands
 from dotenv import load_dotenv
 from langdetect import detect
+from random import randint
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 prefix = ['silla-san ','silla san ','Silla-san ','Silla-San ','Silla san ','Silla San ','SILLA SAN ','SILLA-SAN ','silla-sama ','silla sama','Silla-sama ','Silla-Sama ','Silla sama ','Silla Sama ','SILLA SAMA ','SILLA-SAMA ']
@@ -267,6 +268,8 @@ async def on_message(message):
         return
     elif any(i in message.content.lower() for i in comms):
         pass
+    elif isInQuestions(message.content.lower()) 
+        await message.channel.send(getResponseToQuestion(message.content.lower()))
     elif bot.user in message.mentions or any (i in message.content.lower() for i in prefixes):
         if ("Alezar#8727" == str(message.author)) or ("Gederico#5402" == str(message.author)):
             if ("te amo" in message.content) or ("te quiero" in message.content):
@@ -274,16 +277,14 @@ async def on_message(message):
             elif ("te odio" in message.content):
                 msg = (message.author.mention + ' no me odies \U0001F61E')
             else:
-                # msg = ('<:androlSillaSan:672514784133906450>')
-                return
+                msg = randomResponse()
         else:
             if ("te amo" in message.content) or ("te quiero" in message.content):
                 msg = (message.author.mention + ' ok gracias')
             elif ("te odio" in message.content):
                 msg = (message.author.mention + ' y yo a ti, insignificante humano')
             else:
-                # msg = ('<:androlSillaSan:672514784133906450>')
-                return
+                msg = randomResponse()
         await message.channel.send(msg)
     elif bot.user not in message.mentions:
         if (message.channel.id == 565536811242487840):
@@ -297,3 +298,26 @@ async def on_message(message):
     await bot.process_commands(message)
 
 bot.run(token)
+
+def randomResponse():
+    responses = data["respuestas_standard"]
+    quantityOfResponses = len(responses)
+    indexOfSelectedResponse = randint(0, quantityOfResponses - 1)
+    return responses[indexOfSelectedResponse]
+
+def getQuestion(text):
+    questions = data["preguntas"]
+    return questionsFiltered = list(filter(lambda question: text in question, questions))
+
+def isInQuestions(text):
+    questionsFiltered = getQuestion(text)
+    return len(questionsFiltered) > 0
+
+def getResponseToQuestion(text):
+    questionsFiltered = getQuestion(text)
+    responses = questionsFiltered[0]["respuestas"]
+    quantityOfResponses = len(responses)
+    indexOfSelectedResponse = randint(0, quantityOfResponses - 1)
+    return responses[indexOfSelectedResponse]
+
+
