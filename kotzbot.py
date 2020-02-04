@@ -269,7 +269,7 @@ async def on_message(message):
     elif any(i in message.content.lower() for i in comms):
         pass
     elif bot.user in message.mentions or any (i in message.content.lower() for i in prefixes):
-        if isInQuestions(message.content.lower()) 
+        if isInQuestions(message.content.lower()):
             await message.channel.send(getResponseToQuestion(message.content.lower()))
         elif ("Alezar#8727" == str(message.author)) or ("Gederico#5402" == str(message.author)):
             if ("te amo" in message.content) or ("te quiero" in message.content):
@@ -307,7 +307,8 @@ def randomResponse():
 
 def getQuestion(text):
     questions = data["preguntas"]
-    return questionsFiltered = list(filter(lambda question: text in question, questions))
+    questionsFiltered = list(filter(lambda question: text in question, questions))
+    return questionsFiltered
 
 def isInQuestions(text):
     questionsFiltered = getQuestion(text)
