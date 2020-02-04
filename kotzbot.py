@@ -207,6 +207,28 @@ def get_legion(server = ""):
         result = 'La legion no existe en ' + server.upper()
     return result
 
+def randomResponse():
+    responses = data["respuestas_standard"]
+    quantityOfResponses = len(responses)
+    indexOfSelectedResponse = randint(0, quantityOfResponses - 1)
+    return responses[indexOfSelectedResponse]
+
+def getQuestion(text):
+    questions = data["preguntas"]
+    questionsFiltered = list(filter(lambda question: text in question["pregunta"], questions))
+    return questionsFiltered
+
+def isInQuestions(text):
+    questionsFiltered = getQuestion(text)
+    return len(questionsFiltered) > 0
+
+def getResponseToQuestion(text):
+    questionsFiltered = getQuestion(text)
+    responses = questionsFiltered[0]["respuestas"]
+    quantityOfResponses = len(responses)
+    indexOfSelectedResponse = randint(0, quantityOfResponses - 1)
+    return responses[indexOfSelectedResponse]
+
 @bot.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(bot))
@@ -298,27 +320,5 @@ async def on_message(message):
     await bot.process_commands(message)
 
 bot.run(token)
-
-def randomResponse():
-    responses = data["respuestas_standard"]
-    quantityOfResponses = len(responses)
-    indexOfSelectedResponse = randint(0, quantityOfResponses - 1)
-    return responses[indexOfSelectedResponse]
-
-def getQuestion(text):
-    questions = data["preguntas"]
-    questionsFiltered = list(filter(lambda question: text in question["pregunta"], questions))
-    return questionsFiltered
-
-def isInQuestions(text):
-    questionsFiltered = getQuestion(text)
-    return len(questionsFiltered) > 0
-
-def getResponseToQuestion(text):
-    questionsFiltered = getQuestion(text)
-    responses = questionsFiltered[0]["respuestas"]
-    quantityOfResponses = len(responses)
-    indexOfSelectedResponse = randint(0, quantityOfResponses - 1)
-    return responses[indexOfSelectedResponse]
 
 
