@@ -215,7 +215,7 @@ def randomResponse():
 
 def getQuestion(text):
     questions = data["preguntas"]
-    questionsFiltered = list(filter(lambda question: text in question["pregunta"], questions))
+    questionsFiltered = list(filter(lambda question: question["pregunta"] in text, questions))
     return questionsFiltered
 
 def isInQuestions(text):
