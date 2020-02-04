@@ -273,7 +273,7 @@
         "a80": "cuervoazulgrana",
         "a83": "santoD'Junini",
         "a84": "MaxX",
-        "a84": "cyberpunkchoco",
+        "a85": "cyberpunkchoco",
         "e1": "Samuel2000",
         "e5": "Cardi",
         "e6": "ceerwaru",
@@ -281,5 +281,78 @@
         "e9": "Shakaito",
         "e10": "Popy_nathor",
         "e18": "Brocking"
-    }
+    },
+    "respuestas_standard": [
+      "Siguiente por favor!!!!", 
+      "Preguntale a gt arcade",
+      "Si te digo la respuesta ¿dejas de escribirme por el resto del día?",
+      "Yo digo ligo tu dices.... Ah no no.... Eso es de otro juego verdad?",
+      "Vuelve más tarde, estoy en clases",
+      "Estoy al teléfono, déjemoslo para después.",
+      "Silla-San, Silla-San todo el día Silla-San.",
+      "Otra vez tu?",
+      "Si me dices el resultado de 2170X + 7140 = 11480 pensaré en tu pregunta",
+      "Sorry me llama mi novia",
+      "Puedes formular mejor tu pregunta?"
+    ],
+    "preguntas": [
+      {
+        "pregunta": "estás ahí",
+        "respuestas": [
+          "Si, aquí estoy",
+          "Que necesitas",
+          "Dime"
+        ]
+      },
+      {
+        "pregunta": "como esta el clima",
+        "respuestas": [
+          "bien gracias",
+          "Soleado para mi",
+          "No sé, aún no salgo de la cama"
+        ]
+      },
+      {
+        "pregunta": "cual es tu comida favorita",
+        "respuestas": [
+          "me encanta la pizza",
+          "Las hamburguesas no están mal",
+          "Me gustan las ensaladas"
+        ]
+      },
+      {
+        "pregunta": "que eres",
+        "respuestas": [
+          "lo importante no es lo que soy, sino lo que seré",
+          "Soy lo que quiera ser",
+          "Tu amigo",
+          "Otra vez esa pregunta?",
+          "Creo que alguien preguntó eso antes, preguntale a él"
+        ]
+      },
+      {
+        "pregunta": "que piensas de Androly",
+        "respuestas": [
+          "Es mi compañero",
+          "Sin comentarios",
+          "Otra vez los paparazzi?"
+        ]
+      },
+      {
+        "pregunta": "baka",
+        "respuestas": [
+          "Vaca estás tu, que paras sentado",
+          "En serio quieres empezar algo que no puedes ganar?",
+          "Xq todos los niños son así?"
+        ]
+      },
+      {
+        "pregunta": "buenos días",
+        "respuestas": [
+          "good morning",
+          "Buenos días",
+          "Ohayo"
+        ]
+      }
+    ]
 }
