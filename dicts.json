@@ -48,7 +48,8 @@
         "windelf": 24171,
         "windflower": 0,
         "watercurtain": 22171,
-        "bookofdead": 22171
+        "bookofdead": 22171,
+        "rockcolossus": 21171
     },
     "cosmoboth": {
         "felina": "felina",
@@ -105,7 +106,8 @@
         "wind elf": "windelf",
         "windflower": "windflower",
         "water curtain": "watercurtain",
-        "book of the dead": "bookofdead"
+        "book of the dead": "bookofdead",
+        "rock colossus": "rockcolossus"
     },
     "cosmoes": {
         "anémona": "windflower",
@@ -156,7 +158,8 @@
         "serpiente dos cuernos": "2hornsnake",
         "tenacidad": "tenacity",
         "cortina de agua": "watercurtain",
-        "libro de los muertos": "bookofdead"
+        "libro de los muertos": "bookofdead",
+        "coloso de roca": "rockcolossus"
     },
     "guiadic": {
         "afrodita": "https://youtu.be/KR4UfiDGOes",
