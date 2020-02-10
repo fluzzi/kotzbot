@@ -292,25 +292,34 @@ async def on_message(message):
         pass
     elif bot.user in message.mentions or any (i in message.content.lower() for i in prefixes):
         if isInQuestions(message.content.lower()):
-            await message.channel.send(getResponseToQuestion(message.content.lower()))
+            if (message.channel.id == 565536811242487840):
+                return
+            else:
+                msg = getResponseToQuestion(message.content.lower())
         elif ("Alezar#8727" == str(message.author)) or ("Gederico#5402" == str(message.author)):
             if ("te amo" in message.content) or ("te quiero" in message.content):
                 msg = (message.author.mention + ' y yo a ti \U0001F60D')
             elif ("te odio" in message.content):
                 msg = (message.author.mention + ' no me odies \U0001F61E')
             else:
-                msg = randomResponse()
+                if (message.channel.id == 565536811242487840):
+                    return
+                else:
+                    msg = randomResponse()
         else:
             if ("te amo" in message.content) or ("te quiero" in message.content):
                 msg = (message.author.mention + ' ok gracias')
             elif ("te odio" in message.content):
                 msg = (message.author.mention + ' y yo a ti, insignificante humano')
             else:
-                msg = randomResponse()
+                if (message.channel.id == 565536811242487840):
+                    return
+                else:
+                    msg = randomResponse()
         await message.channel.send(msg)
     elif bot.user not in message.mentions:
         if (message.channel.id == 565536811242487840):
-            if detect(message.content) == 'es':
+            if detect(message.content) == 'es' and len(message.content) > 3:
                 msg = (message.author.mention + ' This is an english only channel // Este canal es solo en ingles\n para español usar <#624818561961164810>')
                 await message.channel.send(msg)
             else:
