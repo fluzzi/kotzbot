@@ -9,8 +9,7 @@ name: Labeler
 on: [pull_request]
 
 jobs:
-  core: kotzbot.py
-  auto-merge: dicts.json
+  label:
 
     runs-on: ubuntu-latest
 
