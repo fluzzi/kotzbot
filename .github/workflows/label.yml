@@ -14,6 +14,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: fluzzi/labeler@v2.0.1
+    - uses: fluzzi/labeler@v2.0.2
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
