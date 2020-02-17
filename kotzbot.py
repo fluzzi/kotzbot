@@ -9,7 +9,6 @@ from langdetect import detect
 from random import randint
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
-#
 prefix = ['silla-san ','silla san ','Silla-san ','Silla-San ','Silla san ','Silla San ','SILLA SAN ','SILLA-SAN ','silla-sama ','silla sama','Silla-sama ','Silla-Sama ','Silla sama ','Silla Sama ','SILLA SAMA ','SILLA-SAMA ']
 prefixes = ['silla san','silla-san','silla sama','silla-sama']
 comms = ['help','ayuda','guia','guide','cosmo','legion','guía','legión']
