@@ -11,7 +11,7 @@ load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 prefix = ['silla-san ','silla san ','Silla-san ','Silla-San ','Silla san ','Silla San ','SILLA SAN ','SILLA-SAN ','silla-sama ','silla sama','Silla-sama ','Silla-Sama ','Silla sama ','Silla Sama ','SILLA SAMA ','SILLA-SAMA ']
 prefixes = ['silla san','silla-san','silla sama','silla-sama']
-comms = ['help','ayuda','guia','guide','cosmo','legion','guía','legión']
+comms = ['help','ayuda','guia','guide','cosmo','legion','guía','legión','info']
 import json
 with open('dicts.json') as json_file:
     data = json.load(json_file)
@@ -132,6 +132,18 @@ def get_cosmo(cosmo):
     return (result)
 
 
+def get_info(char):
+    todos = ""
+    if char.lower() == 'lista':
+        for key in data['info']:
+            todos = todos + key + ', '
+        todos = todos.rstrip(' ').rstrip(',')
+        return todos
+    elif char.lower() in data['info']:
+        return data['info'][char.lower()]
+    else:
+         return 0
+
 def get_guide(char,lang):
     todos = ""
     if lang == "en":
@@ -235,15 +247,26 @@ async def on_ready():
 
 @bot.command(pass_context=True)
 async def help(ctx):
-    msg = ('{0.author.mention} \n HELP\n cosmo list -> get list of cosmo names\n cosmo name of cosmo -> get cosmo release date and location\n cosmo today/weekday -> get cosmo released on specific day\n guide list -> get list of characters name\n guide character name -> get character youtube guide')
+    msg = ('{0.author.mention} \n HELP\n cosmo list -> get list of cosmo names\n cosmo name of cosmo -> get cosmo release date and location\n cosmo today/weekday -> get cosmo released on specific day\n guide list -> get list of characters name\n guide character name -> get character youtube guide\n legion # -> leader info of legion on specified server\n info character name -> show infography of requested character')
     msg = msg.format(ctx.message)
     await ctx.send(msg)
 
 @bot.command(pass_context=True)
 async def ayuda(ctx):
-    msg = ('{0.author.mention} \n AYUDA\n cosmo lista -> lista los nombres de los cosmos\n cosmo nombre de cosmo -> muestra los dias y lugares del cosmo\n cosmo hoy/dia de la semana -> muestra los cosmos que salen ese dia\n guia lista -> lista los nombres de los personajes\n guia nombre del personaje -> muestra el video del analisis del personaje')
+    msg = ('{0.author.mention} \n AYUDA\n cosmo lista -> lista los nombres de los cosmos\n cosmo nombre de cosmo -> muestra los dias y lugares del cosmo\n cosmo hoy/dia de la semana -> muestra los cosmos que salen ese dia\n guia lista -> lista los nombres de los personajes\n guia nombre del personaje -> muestra el video del analisis del personaje\n legión # -> muestra el nombre del lider de la legión en el servidor\n info lista -> lista las infografías disponibles\n info nombre del personaje -> muestra la infografía del personaje')
     msg = msg.format(ctx.message)
     await ctx.send(msg)
+
+@bot.command(pass_context=True)
+async def info(ctx, * , arg = None):
+    real = get_info(arg)
+    if real == 0:
+        await ctx.send('Infografía invalida...')
+        return
+    else:
+        msg = ('{0.author.mention} Infografía ' + arg.capitalize() + ':\n' + real)
+        msg = msg.format(ctx.message)
+        await ctx.send(msg)
 
 @bot.command(pass_context=True, aliases=['guía'])
 async def guia(ctx, * , arg = None):

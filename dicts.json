@@ -285,6 +285,20 @@
         "e10": "Popy_nathor",
         "e18": "Brocking"
     },
+    "info": {
+        "aries": "http://bit.ly/3bHGqm9",
+        "tauro": "http://bit.ly/2SQXNbN",
+        "geminis": "http://bit.ly/37DDhR8",
+        "cancer": "http://bit.ly/320ae9i",
+        "leo": "http://bit.ly/324moxV",
+        "virgo": "http://bit.ly/3bNrB1m",
+        "libra": "http://bit.ly/2Ht5EqJ",
+        "escorpio": "http://bit.ly/37AJFsz",
+        "sagitario": "http://bit.ly/327dNKL",
+        "capricornio": "http://bit.ly/2P1PsB0",
+        "acuario": "http://bit.ly/37EBj2N",
+        "piscis": "http://bit.ly/2SREbnF"
+    },
     "respuestas_standard": [
       "Siguiente por favor!!!!", 
       "Preguntale a gt arcade",
