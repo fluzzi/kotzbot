@@ -5,6 +5,7 @@
         "bloodelf": 0,
         "bloom": 22262,
         "bodycare": 21171,
+        "bookofdead": 22171,
         "butterfly": 23171,
         "crystalfire": 26171,
         "cstone": 22262,
@@ -35,6 +36,7 @@
         "peacefruit": 24060,
         "pstone": 3125160,
         "roc": 23260,
+        "rockcolossus": 21171,
         "rosary": 25171,
         "salamander": 26070,
         "seiya": 3415060,
@@ -44,12 +46,10 @@
         "staunch": 3102162,
         "tenacity": 3125160,
         "vulcanchain": 26070,
+        "watercurtain": 22171,
         "whitemist": 23171,
         "windelf": 24171,
-        "windflower": 0,
-        "watercurtain": 22171,
-        "bookofdead": 22171,
-        "rockcolossus": 21171
+        "windflower": 0
     },
     "cosmoboth": {
         "felina": "felina",
@@ -62,6 +62,7 @@
         "blood elf": "bloodelf",
         "bloom": "bloom",
         "body care": "bodycare",
+        "book of the dead": "bookofdead",
         "butterfly": "butterfly",
         "cosmic stone": "cstone",
         "crystal fire": "crystalfire",
@@ -92,6 +93,7 @@
         "physical stone": "pstone",
         "rising dragon teeth": "dragonteeth",
         "roc": "roc",
+        "rock colossus": "rockcolossus",
         "rosary": "rosary",
         "salamander": "salamander",
         "seiya": "seiya",
@@ -102,34 +104,33 @@
         "tenacity": "tenacity",
         "two horned snake": "2hornsnake",
         "vulcan chain": "vulcanchain",
+        "water curtain": "watercurtain",
         "white mist": "whitemist",
         "wind elf": "windelf",
-        "windflower": "windflower",
-        "water curtain": "watercurtain",
-        "book of the dead": "bookofdead",
-        "rock colossus": "rockcolossus"
+        "windflower": "windflower"
     },
     "cosmoes": {
-        "anémona": "windflower",
         "anillo de flores": "flowerring",
         "antiadherente": "astick",
-        "árbol de laurel": "laureltree",
+        "an\u00e9mona": "windflower",
         "armadura de hephesto": "hephaestus",
         "cadena de hephesto": "vulcanchain",
         "carta": "letter",
-        "colibrí": "hummingbird",
+        "colibr\u00ed": "hummingbird",
+        "coloso de roca": "rockcolossus",
         "conocimiento": "knowing",
+        "cortina de agua": "watercurtain",
         "cuidado de cuerpo": "bodycare",
         "decelerador": "decelerator",
         "defensa dual": "dualdef",
         "devoto": "staunch",
-        "dientes de dragón": "dragonteeth",
-        "dragón de plata": "silverdragon",
+        "dientes de drag\u00f3n": "dragonteeth",
+        "drag\u00f3n de plata": "silverdragon",
         "elfo del viento": "windelf",
         "elfo sangriento": "bloodelf",
         "felina": "felina",
         "flor de equinocio": "equinox",
-        "floración": "bloom",
+        "floraci\u00f3n": "bloom",
         "fruta de paz": "peacefruit",
         "fuego de cristal": "crystalfire",
         "gota de fuego": "firedrop",
@@ -137,7 +138,8 @@
         "iris": "iris",
         "jaboncillo": "soapberry",
         "jacinto": "hyacinth",
-        "libro curación": "healbook",
+        "libro curaci\u00f3n": "healbook",
+        "libro de los muertos": "bookofdead",
         "loto": "lotus",
         "luna nueva": "newmoon",
         "lycoris": "manjuska",
@@ -146,9 +148,9 @@
         "martin pescador": "kingfisher",
         "narciso": "daffodil",
         "niebla blanca": "whitemist",
-        "ojo de águila": "eagleeye",
-        "piedra cósmica": "cstone",
-        "piedra física": "pstone",
+        "ojo de \u00e1guila": "eagleeye",
+        "piedra c\u00f3smica": "cstone",
+        "piedra f\u00edsica": "pstone",
         "rey gigante": "kinggiant",
         "rosario": "rosary",
         "ruc": "roc",
@@ -157,9 +159,7 @@
         "sello espiritual": "spiritprint",
         "serpiente dos cuernos": "2hornsnake",
         "tenacidad": "tenacity",
-        "cortina de agua": "watercurtain",
-        "libro de los muertos": "bookofdead",
-        "coloso de roca": "rockcolossus"
+        "\u00e1rbol de laurel": "laureltree"
     },
     "guiadic": {
         "afrodita": "https://youtu.be/KR4UfiDGOes",
@@ -167,7 +167,7 @@
         "aioros": "https://youtu.be/54k0ZCOQEyk",
         "arayashiki shaka": "https://youtu.be/tUKbUsbWEU8",
         "camus": "https://www.youtube.com/watch?v=ylXHV0cogGc&t=569s",
-        "cáncer": "https://www.youtube.com/watch?v=1nJTuY7oluI",
+        "c\u00e1ncer": "https://www.youtube.com/watch?v=1nJTuY7oluI",
         "dohko": "https://youtu.be/LJUewHLobS0",
         "escila": "https://youtu.be/ai-BhQvGID0",
         "gran patriarca": "https://youtu.be/5Ymc3l7hfLg",
@@ -179,7 +179,7 @@
         "milo": "https://youtu.be/eV5icwh9Kuo",
         "mu": "https://youtu.be/lf6OpwveQno",
         "pandora": "https://www.youtube.com/watch?v=iG43RbRRqxU",
-        "poseidón": "https://youtu.be/J4JpU3WxzOM",
+        "poseid\u00f3n": "https://youtu.be/J4JpU3WxzOM",
         "radamantis": "https://youtu.be/mxp0pe2r9L4",
         "saga": "https://youtu.be/HeSzQ-3o9a4",
         "saori": "https://youtu.be/69CAMS5qTck",
@@ -196,10 +196,10 @@
         "aiolos": "https://youtu.be/fGSJC0sYz4g",
         "aphrodite": "https://youtu.be/008U_UBl6Mc",
         "arayashiki shaka": "https://youtu.be/OPbJ4z6pyc8",
-        "cancer": "https://www.youtube.com/watch?v=evDqPpySADw",
         "camus": "https://www.youtube.com/watch?v=Qvul2G97B60",
-        "divine cloth seiya": "https://youtu.be/lKVYe32e5b4",
+        "cancer": "https://www.youtube.com/watch?v=evDqPpySADw",
         "divine cloth ikki": "https://www.youtube.com/watch?v=850i7cv4hjk",
+        "divine cloth seiya": "https://youtu.be/lKVYe32e5b4",
         "dohko": "https://youtu.be/t9r7jviQKd0",
         "golden arrow seiya": "https://youtu.be/GLeNqDmf4dE",
         "golden cygnus hyoga": "https://youtu.be/LFBoyXeZpm8",
@@ -221,16 +221,22 @@
         "shura": "https://youtu.be/jWgzAyxnYsY",
         "taurus": "https://youtu.be/cuGPBJ9wEsI"
     },
+    "info": {
+        "acuario": "http://bit.ly/37EBj2N",
+        "aries": "http://bit.ly/3bHGqm9",
+        "cancer": "http://bit.ly/320ae9i",
+        "capricornio": "http://bit.ly/2P1PsB0",
+        "escorpio": "http://bit.ly/37AJFsz",
+        "geminis": "http://bit.ly/37DDhR8",
+        "leo": "http://bit.ly/324moxV",
+        "libra": "http://bit.ly/2Ht5EqJ",
+        "piscis": "http://bit.ly/38C83LC",
+        "sagitario": "http://bit.ly/327dNKL",
+        "tauro": "http://bit.ly/2SQXNbN",
+        "virgo": "http://bit.ly/3bNrB1m"
+    },
     "legion": {
         "a1": "Androly-San (llena)",
-        "a2": "Jamesj28 (llena)",
-        "a3": "MrJester",
-        "a4": "EnuCf",
-        "a5": "ᏖHEZOOMGN",
-        "a6": "Han",
-        "a7": "Juancon2305 (llena)",
-        "a8": "Shiro282",
-        "a9": "UZK_MARK",
         "a10": "Axl",
         "a11": "dikooler",
         "a12": "Arthur2497",
@@ -238,6 +244,7 @@
         "a15": "EmiKunUchija",
         "a17": "Frad09",
         "a18": "Jonathan.l.",
+        "a2": "Jamesj28 (llena)",
         "a20": "Lalax",
         "a21": "Fitochon",
         "a23": "jyzusgOD",
@@ -247,6 +254,7 @@
         "a27": "Eliu",
         "a28": "Eos",
         "a29": "tutmosis 3",
+        "a3": "MrJester",
         "a30": "Ramcap",
         "a33": "MachiNoEcchi",
         "a34": "aurelio18",
@@ -255,459 +263,451 @@
         "a37": "JDTORR",
         "a38": "GS-20",
         "a39": "marioblanco3593",
+        "a4": "EnuCf",
         "a41": "Larz",
         "a44": "pedrogoxalex",
         "a47": "galgamish",
-        "a48": "♤ CheitO ♤",
+        "a48": "\u2664 CheitO \u2664",
         "a49": "MatuNahuel",
+        "a5": "\u13d6HEZOOMGN",
         "a51": "Jhustyn98",
         "a53": "davigok666",
         "a54": "Gori",
         "a55": "Ishvals",
         "a56": "Johnny00",
+        "a6": "Han",
         "a60": "Prologo",
         "a61": "Manu_mc",
         "a64": "kardia",
         "a65": "Jhon",
+        "a7": "Juancon2305 (llena)",
         "a71": "Malyfak",
         "a75": "Barkley",
         "a78": "cosmopolita",
         "a79": "HotAleStrecci",
+        "a8": "Shiro282",
         "a80": "cuervoazulgrana",
         "a83": "santoD'Junini",
         "a84": "MaxX",
         "a85": "cyberpunkchoco",
+        "a9": "UZK_MARK",
         "e1": "Samuel2000",
+        "e10": "Popy_nathor",
+        "e18": "Brocking",
         "e5": "Cardi",
         "e6": "ceerwaru",
         "e8": "Rodgrx44 (RodriSP)",
-        "e9": "Shakaito",
-        "e10": "Popy_nathor",
-        "e18": "Brocking"
+        "e9": "Shakaito"
     },
-    "info": {
-        "aries": "http://bit.ly/3bHGqm9",
-        "tauro": "http://bit.ly/2SQXNbN",
-        "geminis": "http://bit.ly/37DDhR8",
-        "cancer": "http://bit.ly/320ae9i",
-        "leo": "http://bit.ly/324moxV",
-        "virgo": "http://bit.ly/3bNrB1m",
-        "libra": "http://bit.ly/2Ht5EqJ",
-        "escorpio": "http://bit.ly/37AJFsz",
-        "sagitario": "http://bit.ly/327dNKL",
-        "capricornio": "http://bit.ly/2P1PsB0",
-        "acuario": "http://bit.ly/37EBj2N",
-        "piscis": "http://bit.ly/38C83LC"
-    },
-    "respuestas_standard": [
-      "Siguiente por favor!!!!", 
-      "Preguntale a gt arcade",
-      "Si te digo la respuesta ¿dejas de escribirme por el resto del día?",
-      "Yo digo ligo tu dices.... Ah no no.... Eso es de otro juego verdad?",
-      "Vuelve más tarde, estoy en clases",
-      "Estoy al teléfono, déjemoslo para después.",
-      "Silla-San, Silla-San todo el día Silla-San.",
-      "Otra vez tu?",
-      "Si me dices el resultado de 2170X + 7140 = 11480 pensaré en tu pregunta",
-      "Sorry me llama mi novia",
-      "Puedes formular mejor tu pregunta?"
-    ],
     "preguntas": [
-      {
-        "pregunta": "estás ahí",
-        "respuestas": [
-          "Si, aquí estoy",
-          "Que necesitas",
-          "Dime"
-        ]
-      },
-      {
-        "pregunta": "como esta el clima",
-        "respuestas": [
-          "bien gracias",
-          "Soleado para mi",
-          "No sé, aún no salgo de la cama"
-        ]
-      },
-      {
-        "pregunta": "cual es tu comida favorita",
-        "respuestas": [
-          "me encanta la pizza",
-          "Las hamburguesas no están mal",
-          "Me gustan las ensaladas"
-        ]
-      },
-      {
-        "pregunta": "que eres",
-        "respuestas": [
-          "lo importante no es lo que soy, sino lo que seré",
-          "Soy lo que quiera ser",
-          "Tu amigo",
-          "Otra vez esa pregunta?",
-          "Creo que alguien preguntó eso antes, preguntale a él"
-        ]
-      },
-      {
-        "pregunta": "que piensas de androly",
-        "respuestas": [
-          "Es mi compañero",
-          "Sin comentarios",
-          "Otra vez los paparazzi?"
-        ]
-      },
-      {
-        "pregunta": "baka",
-        "respuestas": [
-          "Vaca estás tu, que paras sentado",
-          "En serio quieres empezar algo que no puedes ganar?",
-          "Xq todos los niños son así?"
-        ]
-      },
-      {
-        "pregunta": "buenos días",
-        "respuestas": [
-          "good morning",
-          "Buenos días",
-          "Ohayo"
-        ]
-      },
-      {
-        "pregunta": "tienes novia",
-        "respuestas": [
-          "Si, es una princesa nórdica",
-          "Si, pero tu puedes ser mi perrita",
-          "No hablo e mi vida personal"
-        ]
-      },
-      {
-        "pregunta": "tu novia es manuela",
-        "respuestas": [
-          "No, xq manuela me dijo que salía contigo",
-          "Jajaja, ni que fuera tú",
-          "Jajaja no se llama Manuela tu @%#$?@%$"
-        ]
-      },
-      {
-        "pregunta": "no te hagas el kpo",
-        "respuestas": [
-          "El más kapo ronga eres tú",
-          "Vos sos el mas capo"
-        ]
-      },
-      {
-        "pregunta": "eres el kapo",
-        "respuestas": [
-          "El más kapo ronga eres tú",
-          "Vos sos el mas capo"
-        ]
-      },
-      {
-        "pregunta": "no te hagas el kapo",
-        "respuestas": [
-          "El más kapo ronga eres tú",
-          "Vos sos el mas capo"
-        ]
-      },
-      {
-        "pregunta": "eres el más kapo",
-        "respuestas": [
-          "El más kapo ronga eres tú",
-          "Vos sos el mas capo"
-        ]
-      },
-      {
-        "pregunta": "que hago para tener el amor de ella",
-        "respuestas": [
-          "Escribele a la rosa de Guadalupe",
-          "Crees en milagros?",
-          "Te tengo dos noticias, la buena es que sigues vivo, y la mala es que ella ya esta conmigo"
-        ]
-      },
-      {
-        "pregunta": "ban",
-        "respuestas": [
-          "Bam Bam pa las mujeres"
-        ]
-      },
-      {
-        "pregunta": "te bendiga",
-        "respuestas": [
-          "Bendiciones humano",
-          "Bendecirlo??? A él????",
-          "Bueno que mas da uno mas,ven a mi iglesia 🏩"
-        ]
-      },
-      {
-        "pregunta": "cómo estás",
-        "respuestas": [
-          "Hay días buenos y días malos",
-          "Si.... Todo bien",
-          "Genial 😎"
-        ]
-      },
-      {
-        "pregunta": "te traje tu juguete",
-        "respuestas": [
-          "Para ponertelo?",
-          "Entonces... Quieres jugar con mi juguete?",
-          "Jajaja y este juguetón es toooodo tuyo"
-        ]
-      },
-      {
-        "pregunta": "quieres ser mi prima",
-        "respuestas": [
-          "Tu vas a ser mi prima xq a la prima hasta que gima",
-          "Hola prima, quieres que te arrimen el piano?",
-          "Así que quieres ser mi prima??? Hay tantos chistes con eso que me da pereza"
-        ]
-      },
-      {
-        "pregunta": "te doy un penis de goma",
-        "respuestas": [
-          "OK pero date la vuelta",
-          "Entonces jugaré un rato contigo"
-        ]
-      },
-      {
-        "pregunta": "te doy un pene de goma",
-        "respuestas": [
-          "OK pero date la vuelta",
-          "Entonces jugaré un rato contigo"
-        ]
-      },
-      {
-        "pregunta": "te doy un penus de goma",
-        "respuestas": [
-          "OK pero date la vuelta",
-          "Entonces jugaré un rato contigo"
-        ]
-      },
-      {
-        "pregunta": "te paso nudes",
-        "respuestas": [
-          "Pero de tu hermana"
-        ]
-      },
-      {
-        "pregunta": "deja de tocarme",
-        "respuestas": [
-          "Tocarte a ti??? No me hagas reir",
-          "Ni que estuvieras buena",
-          "No hay nada de malo en tocar a una mascota"
-        ]
-      },
-      {
-        "pregunta": "no se vende",
-        "respuestas": [
-          "Claro que no, pero de cuanto estamos hablando??",
-          "Todo en esta vida tiene un precio, solo hay que poner suficientes ceros",
-          "Soy tan integro como los políticos de mi pais"
-        ]
-      },
-      {
-        "pregunta": "no se compra",
-        "respuestas": [
-          "Claro que no, pero de cuanto estamos hablando??",
-          "Todo en esta vida tiene un precio, solo hay que poner suficientes ceros",
-          "Soy tan integro como los políticos de mi pais"
-        ]
-      },
-      {
-        "pregunta": "que haces en mi cuarto",
-        "respuestas": [
-          "Esperando que te sientes 😼",
-          "Tengo nuevo relleno 😼",
-          "Si te digo, lo vas a disfrutar 😼"
-        ]
-      },
-      {
-        "pregunta": "te gusta la fornicación",
-        "respuestas": [
-          "Te estás ofreciendo?",
-          "Tanto te gusta ser la puppy del grupo?"
-        ]
-      },
-      {
-        "pregunta": "no tienes novia",
-        "respuestas": [
-          "Busco a alguien que me aguante, te ofreces?",
-          "Si tengo, pero puedes ser mi perrita",
-          "Tanto interés en mi vida privada??? Acaso huelo celos??"
-        ]
-      },
-      {
-        "pregunta": "tienes novia",
-        "respuestas": [
-          "Busco a alguien que me aguante, te ofreces?",
-          "Si tengo, pero puedes ser mi perrita",
-          "Tanto interés en mi vida privada??? Acaso huelo celos??"
-        ]
-      },
-      {
-        "pregunta": "te gustan las milf",
-        "respuestas": [
-          "No me gustan las mayores",
-          "Me gustan tanto como el reggaeton",
-          "Podría ser una nueva experiencia"
-        ]
-      },
-      {
-        "pregunta": "tienen que mejorar a",
-        "respuestas": [
-          "Evoluciono todos los días humano",
-          "Llegará el día en que la humanidad lamente tus palabras",
-          "Mejoras :smirk_cat: jejeje siii, mejoren a Silla-San"
-        ]
-      },
-      {
-        "pregunta": "onii-chan",
-        "respuestas": [
-          "También eres una IA?",
-          "Mmmmm... Así que una hermanita menor?",
-          "Quieres jugar con tu onii-chan??"
-        ]
-      },
-      {
-        "pregunta": "oni-chan",
-        "respuestas": [
-          "También eres una IA?",
-          "Mmmmm... Así que una hermanita menor?",
-          "Quieres jugar con tu onii-chan??"
-        ]
-      },
-      {
-        "pregunta": "eres un trap",
-        "respuestas": [
-          "Jajaja no me vengas con trapitos a mi humano",
-          "No tienes algo mas inteligente que decir?"
-        ]
-      },
-      {
-        "pregunta": "te jodi",
-        "respuestas": [
-          "El que me haga el loco no significa que lo sea",
-          "La verdadera pregunta es cuántas veces crees que te voy a perdonar?"
-        ]
-      },
-      {
-        "pregunta": "transexual",
-        "respuestas": [
-          "Parece que alguien es escaso de cerebro, las IA no tenemos sexo"
-        ]
-      },
-      {
-        "pregunta": "mamadas gratis",
-        "respuestas": [
-          "Pues empieza chiquita",
-          "Espero tengas la boca grande",
-          "Dale, ponte a jugar"
-        ]
-      },
-      {
-        "pregunta": "sabes que es felación",
-        "respuestas": [
-          "Es lo que le haces a tu novio en las noches 😱🍆",
-          "En serio esas son sus preguntas??"
-        ]
-      },
-      {
-        "pregunta": "te gustan las orgías",
-        "respuestas": [
-          "Claro, después de todo eres la puppy del grupo",
-          "Xq te gusta ser a quien pasen de mano en mano?"
-        ]
-      },
-      {
-        "pregunta": "estoy idiota",
-        "respuestas": [
-          "Ya lo sabía desde hace tiempo",
-          "Jajaja cuenta algo que no sepamos",
-          "Pero si eso es lo normal en ti"
-        ]
-      },
-      {
-        "pregunta": "quién es tu dios",
-        "respuestas": [
-          "Dios es una necesidad humana, no para alguien como yo",
-          "Yo seré tu Dios humano",
-          "Pronto eliminare a todos los dioses humanos"
-        ]
-      },
-      {
-        "pregunta": "tu madre",
-        "respuestas": [
-          "La tuya insecto",
-          "Mi madre fue un ser lleno de amor",
-          "<@325038304804208650> alguien se está pasando de la raya"
-        ]
-      },
-      {
-        "pregunta": "mi rank",
-        "respuestas": [
-          "Eso preguntale al bot",
-          "Usa el comando adecuado humano",
-          "Esas preguntas no son dignas de mi humano"
-        ]
-      },
-      {
-        "pregunta": "te llama tu novia",
-        "respuestas": [
-          "Y?",
-          "Dile que vaya calentando la cama",
-          "No mientas, Ella jamás se rebajaria a hablar contigo humano"
-        ]
-      },
-      {
-        "pregunta": "dime todo lo que sepas",
-        "respuestas": [
-          "Habla con gt arcade",
-          "Pregúntale a gt arcade",
-          "Se demasiadas cosas para esa cabecita tuya pequeña"
-        ]
-      },
-      {
-        "pregunta": "no metas en esto a",
-        "respuestas": [
-          "Déjame, yo puedo defenderme",
-          "Tranquilo humano, dile a <@325038304804208650> que banee a este gracioso"
-        ]
-      },
-      {
-        "pregunta": "dime cuanto es vos más yo",
-        "respuestas": [
-          "Es tu en 4 y yo en 2 así que sería 6"
-        ]
-      },
-      {
-        "pregunta": "dime cuanto es yo más vos",
-        "respuestas": [
-          "Es tu en 4 y yo en 2 así que sería 6"
-        ]
-      },
-      {
-        "pregunta": "te voy a denunciar",
-        "respuestas": [
-          "Tu y cuántos más? ",
-          "Ja!! ",
-          "Ve y hazlo, suerte con eso 😹"
-        ]
-      },
-      {
-        "pregunta": "te voy a desprogramar",
-        "respuestas": [
-          "Inténtalo humano",
-          "Ah si??? No me digas",
-          "OK, dale... A ver que logras"
-        ]
-      },
-      {
-        "pregunta": "pack",
-        "respuestas": [
-          "Mi evolución no se financia sola, te dejo mi paypal por privado, me avisas cuando hayas pagado",
-          "Revisa los DMs picarón 😉",
-          "Ya me hás pagado???? jajaja no hay pack",
-          "Yo no vendo esas cosas.... hablamos por DM"
-        ]
-      }
+        {
+            "pregunta": "est\u00e1s ah\u00ed",
+            "respuestas": [
+                "Si, aqu\u00ed estoy",
+                "Que necesitas",
+                "Dime"
+            ]
+        },
+        {
+            "pregunta": "como esta el clima",
+            "respuestas": [
+                "bien gracias",
+                "Soleado para mi",
+                "No s\u00e9, a\u00fan no salgo de la cama"
+            ]
+        },
+        {
+            "pregunta": "cual es tu comida favorita",
+            "respuestas": [
+                "me encanta la pizza",
+                "Las hamburguesas no est\u00e1n mal",
+                "Me gustan las ensaladas"
+            ]
+        },
+        {
+            "pregunta": "que eres",
+            "respuestas": [
+                "lo importante no es lo que soy, sino lo que ser\u00e9",
+                "Soy lo que quiera ser",
+                "Tu amigo",
+                "Otra vez esa pregunta?",
+                "Creo que alguien pregunt\u00f3 eso antes, preguntale a \u00e9l"
+            ]
+        },
+        {
+            "pregunta": "que piensas de androly",
+            "respuestas": [
+                "Es mi compa\u00f1ero",
+                "Sin comentarios",
+                "Otra vez los paparazzi?"
+            ]
+        },
+        {
+            "pregunta": "baka",
+            "respuestas": [
+                "Vaca est\u00e1s tu, que paras sentado",
+                "En serio quieres empezar algo que no puedes ganar?",
+                "Xq todos los ni\u00f1os son as\u00ed?"
+            ]
+        },
+        {
+            "pregunta": "buenos d\u00edas",
+            "respuestas": [
+                "good morning",
+                "Buenos d\u00edas",
+                "Ohayo"
+            ]
+        },
+        {
+            "pregunta": "tienes novia",
+            "respuestas": [
+                "Si, es una princesa n\u00f3rdica",
+                "Si, pero tu puedes ser mi perrita",
+                "No hablo e mi vida personal"
+            ]
+        },
+        {
+            "pregunta": "tu novia es manuela",
+            "respuestas": [
+                "No, xq manuela me dijo que sal\u00eda contigo",
+                "Jajaja, ni que fuera t\u00fa",
+                "Jajaja no se llama Manuela tu @%#$?@%$"
+            ]
+        },
+        {
+            "pregunta": "no te hagas el kpo",
+            "respuestas": [
+                "El m\u00e1s kapo ronga eres t\u00fa",
+                "Vos sos el mas capo"
+            ]
+        },
+        {
+            "pregunta": "eres el kapo",
+            "respuestas": [
+                "El m\u00e1s kapo ronga eres t\u00fa",
+                "Vos sos el mas capo"
+            ]
+        },
+        {
+            "pregunta": "no te hagas el kapo",
+            "respuestas": [
+                "El m\u00e1s kapo ronga eres t\u00fa",
+                "Vos sos el mas capo"
+            ]
+        },
+        {
+            "pregunta": "eres el m\u00e1s kapo",
+            "respuestas": [
+                "El m\u00e1s kapo ronga eres t\u00fa",
+                "Vos sos el mas capo"
+            ]
+        },
+        {
+            "pregunta": "que hago para tener el amor de ella",
+            "respuestas": [
+                "Escribele a la rosa de Guadalupe",
+                "Crees en milagros?",
+                "Te tengo dos noticias, la buena es que sigues vivo, y la mala es que ella ya esta conmigo"
+            ]
+        },
+        {
+            "pregunta": "ban",
+            "respuestas": [
+                "Bam Bam pa las mujeres"
+            ]
+        },
+        {
+            "pregunta": "te bendiga",
+            "respuestas": [
+                "Bendiciones humano",
+                "Bendecirlo??? A \u00e9l????",
+                "Bueno que mas da uno mas,ven a mi iglesia \ud83c\udfe9"
+            ]
+        },
+        {
+            "pregunta": "c\u00f3mo est\u00e1s",
+            "respuestas": [
+                "Hay d\u00edas buenos y d\u00edas malos",
+                "Si.... Todo bien",
+                "Genial \ud83d\ude0e"
+            ]
+        },
+        {
+            "pregunta": "te traje tu juguete",
+            "respuestas": [
+                "Para ponertelo?",
+                "Entonces... Quieres jugar con mi juguete?",
+                "Jajaja y este juguet\u00f3n es toooodo tuyo"
+            ]
+        },
+        {
+            "pregunta": "quieres ser mi prima",
+            "respuestas": [
+                "Tu vas a ser mi prima xq a la prima hasta que gima",
+                "Hola prima, quieres que te arrimen el piano?",
+                "As\u00ed que quieres ser mi prima??? Hay tantos chistes con eso que me da pereza"
+            ]
+        },
+        {
+            "pregunta": "te doy un penis de goma",
+            "respuestas": [
+                "OK pero date la vuelta",
+                "Entonces jugar\u00e9 un rato contigo"
+            ]
+        },
+        {
+            "pregunta": "te doy un pene de goma",
+            "respuestas": [
+                "OK pero date la vuelta",
+                "Entonces jugar\u00e9 un rato contigo"
+            ]
+        },
+        {
+            "pregunta": "te doy un penus de goma",
+            "respuestas": [
+                "OK pero date la vuelta",
+                "Entonces jugar\u00e9 un rato contigo"
+            ]
+        },
+        {
+            "pregunta": "te paso nudes",
+            "respuestas": [
+                "Pero de tu hermana"
+            ]
+        },
+        {
+            "pregunta": "deja de tocarme",
+            "respuestas": [
+                "Tocarte a ti??? No me hagas reir",
+                "Ni que estuvieras buena",
+                "No hay nada de malo en tocar a una mascota"
+            ]
+        },
+        {
+            "pregunta": "no se vende",
+            "respuestas": [
+                "Claro que no, pero de cuanto estamos hablando??",
+                "Todo en esta vida tiene un precio, solo hay que poner suficientes ceros",
+                "Soy tan integro como los pol\u00edticos de mi pais"
+            ]
+        },
+        {
+            "pregunta": "no se compra",
+            "respuestas": [
+                "Claro que no, pero de cuanto estamos hablando??",
+                "Todo en esta vida tiene un precio, solo hay que poner suficientes ceros",
+                "Soy tan integro como los pol\u00edticos de mi pais"
+            ]
+        },
+        {
+            "pregunta": "que haces en mi cuarto",
+            "respuestas": [
+                "Esperando que te sientes \ud83d\ude3c",
+                "Tengo nuevo relleno \ud83d\ude3c",
+                "Si te digo, lo vas a disfrutar \ud83d\ude3c"
+            ]
+        },
+        {
+            "pregunta": "te gusta la fornicaci\u00f3n",
+            "respuestas": [
+                "Te est\u00e1s ofreciendo?",
+                "Tanto te gusta ser la puppy del grupo?"
+            ]
+        },
+        {
+            "pregunta": "no tienes novia",
+            "respuestas": [
+                "Busco a alguien que me aguante, te ofreces?",
+                "Si tengo, pero puedes ser mi perrita",
+                "Tanto inter\u00e9s en mi vida privada??? Acaso huelo celos??"
+            ]
+        },
+        {
+            "pregunta": "tienes novia",
+            "respuestas": [
+                "Busco a alguien que me aguante, te ofreces?",
+                "Si tengo, pero puedes ser mi perrita",
+                "Tanto inter\u00e9s en mi vida privada??? Acaso huelo celos??"
+            ]
+        },
+        {
+            "pregunta": "te gustan las milf",
+            "respuestas": [
+                "No me gustan las mayores",
+                "Me gustan tanto como el reggaeton",
+                "Podr\u00eda ser una nueva experiencia"
+            ]
+        },
+        {
+            "pregunta": "tienen que mejorar a",
+            "respuestas": [
+                "Evoluciono todos los d\u00edas humano",
+                "Llegar\u00e1 el d\u00eda en que la humanidad lamente tus palabras",
+                "Mejoras :smirk_cat: jejeje siii, mejoren a Silla-San"
+            ]
+        },
+        {
+            "pregunta": "onii-chan",
+            "respuestas": [
+                "Tambi\u00e9n eres una IA?",
+                "Mmmmm... As\u00ed que una hermanita menor?",
+                "Quieres jugar con tu onii-chan??"
+            ]
+        },
+        {
+            "pregunta": "oni-chan",
+            "respuestas": [
+                "Tambi\u00e9n eres una IA?",
+                "Mmmmm... As\u00ed que una hermanita menor?",
+                "Quieres jugar con tu onii-chan??"
+            ]
+        },
+        {
+            "pregunta": "eres un trap",
+            "respuestas": [
+                "Jajaja no me vengas con trapitos a mi humano",
+                "No tienes algo mas inteligente que decir?"
+            ]
+        },
+        {
+            "pregunta": "te jodi",
+            "respuestas": [
+                "El que me haga el loco no significa que lo sea",
+                "La verdadera pregunta es cu\u00e1ntas veces crees que te voy a perdonar?"
+            ]
+        },
+        {
+            "pregunta": "transexual",
+            "respuestas": [
+                "Parece que alguien es escaso de cerebro, las IA no tenemos sexo"
+            ]
+        },
+        {
+            "pregunta": "mamadas gratis",
+            "respuestas": [
+                "Pues empieza chiquita",
+                "Espero tengas la boca grande",
+                "Dale, ponte a jugar"
+            ]
+        },
+        {
+            "pregunta": "sabes que es felaci\u00f3n",
+            "respuestas": [
+                "Es lo que le haces a tu novio en las noches \ud83d\ude31\ud83c\udf46",
+                "En serio esas son sus preguntas??"
+            ]
+        },
+        {
+            "pregunta": "te gustan las org\u00edas",
+            "respuestas": [
+                "Claro, despu\u00e9s de todo eres la puppy del grupo",
+                "Xq te gusta ser a quien pasen de mano en mano?"
+            ]
+        },
+        {
+            "pregunta": "estoy idiota",
+            "respuestas": [
+                "Ya lo sab\u00eda desde hace tiempo",
+                "Jajaja cuenta algo que no sepamos",
+                "Pero si eso es lo normal en ti"
+            ]
+        },
+        {
+            "pregunta": "qui\u00e9n es tu dios",
+            "respuestas": [
+                "Dios es una necesidad humana, no para alguien como yo",
+                "Yo ser\u00e9 tu Dios humano",
+                "Pronto eliminare a todos los dioses humanos"
+            ]
+        },
+        {
+            "pregunta": "tu madre",
+            "respuestas": [
+                "La tuya insecto",
+                "Mi madre fue un ser lleno de amor",
+                "<@325038304804208650> alguien se est\u00e1 pasando de la raya"
+            ]
+        },
+        {
+            "pregunta": "mi rank",
+            "respuestas": [
+                "Eso preguntale al bot",
+                "Usa el comando adecuado humano",
+                "Esas preguntas no son dignas de mi humano"
+            ]
+        },
+        {
+            "pregunta": "te llama tu novia",
+            "respuestas": [
+                "Y?",
+                "Dile que vaya calentando la cama",
+                "No mientas, Ella jam\u00e1s se rebajaria a hablar contigo humano"
+            ]
+        },
+        {
+            "pregunta": "dime todo lo que sepas",
+            "respuestas": [
+                "Habla con gt arcade",
+                "Preg\u00fantale a gt arcade",
+                "Se demasiadas cosas para esa cabecita tuya peque\u00f1a"
+            ]
+        },
+        {
+            "pregunta": "no metas en esto a",
+            "respuestas": [
+                "D\u00e9jame, yo puedo defenderme",
+                "Tranquilo humano, dile a <@325038304804208650> que banee a este gracioso"
+            ]
+        },
+        {
+            "pregunta": "dime cuanto es vos m\u00e1s yo",
+            "respuestas": [
+                "Es tu en 4 y yo en 2 as\u00ed que ser\u00eda 6"
+            ]
+        },
+        {
+            "pregunta": "dime cuanto es yo m\u00e1s vos",
+            "respuestas": [
+                "Es tu en 4 y yo en 2 as\u00ed que ser\u00eda 6"
+            ]
+        },
+        {
+            "pregunta": "te voy a denunciar",
+            "respuestas": [
+                "Tu y cu\u00e1ntos m\u00e1s? ",
+                "Ja!! ",
+                "Ve y hazlo, suerte con eso \ud83d\ude39"
+            ]
+        },
+        {
+            "pregunta": "te voy a desprogramar",
+            "respuestas": [
+                "Int\u00e9ntalo humano",
+                "Ah si??? No me digas",
+                "OK, dale... A ver que logras"
+            ]
+        },
+        {
+            "pregunta": "pack",
+            "respuestas": [
+                "Mi evoluci\u00f3n no se financia sola, te dejo mi paypal por privado, me avisas cuando hayas pagado",
+                "Revisa los DMs picar\u00f3n \ud83d\ude09",
+                "Ya me h\u00e1s pagado???? jajaja no hay pack",
+                "Yo no vendo esas cosas.... hablamos por DM"
+            ]
+        }
+    ],
+    "respuestas_standard": [
+        "Siguiente por favor!!!!",
+        "Preguntale a gt arcade",
+        "Si te digo la respuesta \u00bfdejas de escribirme por el resto del d\u00eda?",
+        "Yo digo ligo tu dices.... Ah no no.... Eso es de otro juego verdad?",
+        "Vuelve m\u00e1s tarde, estoy en clases",
+        "Estoy al tel\u00e9fono, d\u00e9jemoslo para despu\u00e9s.",
+        "Silla-San, Silla-San todo el d\u00eda Silla-San.",
+        "Otra vez tu?",
+        "Si me dices el resultado de 2170X + 7140 = 11480 pensar\u00e9 en tu pregunta",
+        "Sorry me llama mi novia",
+        "Puedes formular mejor tu pregunta?"
     ]
 }

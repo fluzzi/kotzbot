@@ -11,10 +11,23 @@ load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 prefix = ['silla-san ','silla san ','Silla-san ','Silla-San ','Silla san ','Silla San ','SILLA SAN ','SILLA-SAN ','silla-sama ','silla sama','Silla-sama ','Silla-Sama ','Silla sama ','Silla Sama ','SILLA SAMA ','SILLA-SAMA ']
 prefixes = ['silla san','silla-san','silla sama','silla-sama']
-comms = ['help','ayuda','guia','guide','cosmo','legion','guía','legión','info']
+comms = ['help','ayuda','guia','guide','cosmo','legion','guía','legión','info','add','delete']
+import time
+import threading
 import json
-with open('dicts.json') as json_file:
-    data = json.load(json_file)
+dataText = ""
+def fileWatcher():
+    global data, dataText
+    while True:
+        f = open('dicts.json')
+        content = f.read()
+        f.close()
+        if content != dataText:
+            print("File was modified! Reloading it...")
+            data = json.loads(content)
+            dataText = content
+        time.sleep(2) #Adjust this to get the best performance
+threading.Thread(target=fileWatcher).start()
 bot = commands.Bot(command_prefix=commands.when_mentioned_or(*prefix), case_insensitive=True)
 bot.remove_command('help')
 def get_cosmo(cosmo):
@@ -219,6 +232,82 @@ def get_legion(server = ""):
         result = 'La legion no existe en ' + server.upper()
     return result
 
+def add_data(typ,name,link):
+    if typ.lower() == "info":
+        if name.lower() in data['info']:
+            msg = name + " already exist"
+        else:
+            data['info'][name.lower()] = link
+            with open('dicts.json', 'w') as fp:
+                json.dump(data, fp, sort_keys=True, indent=4)
+            msg = name + " added succesfuly"
+        return msg
+    elif typ.lower() == "guia":
+        if name.lower() in data['guiadic']:
+            msg = name + " already exist"
+        else:
+            data['guiadic'][name.lower()] = link
+            with open('dicts.json', 'w') as fp:
+                json.dump(data, fp, sort_keys=True, indent=4)
+            msg = name + " added succesfuly"
+        return msg
+    elif typ.lower() == "guide":
+        if name.lower() in data['guidedic']:
+            msg = name + " already exist"
+        else:
+            data['guidedic'][name.lower()] = link
+            with open('dicts.json', 'w') as fp:
+                json.dump(data, fp, sort_keys=True, indent=4)
+            msg = name + " added succesfuly"
+        return msg
+    elif typ.lower() == "legion":
+        if name.lower() in data['legion']:
+            msg = name + " already exist"
+        else:
+            data['legion'][name.lower()] = link
+            with open('dicts.json', 'w') as fp:
+                json.dump(data, fp, sort_keys=True, indent=4)
+            msg = name + " added succesfuly"
+        return msg
+
+def del_data(typ,name,link):
+    if typ.lower() == "info":
+        if name.lower() not in data['info']:
+            msg = name + " don't exist"
+        else:
+            del data['info'][name.lower()]
+            with open('dicts.json', 'w') as fp:
+                json.dump(data, fp, sort_keys=True, indent=4)
+            msg = name + " deleted succesfuly"
+        return msg
+    elif typ.lower() == "guia":
+        if name.lower() not in data['guiadic']:
+            msg = name + " don't exist"
+        else:
+            del data['guiadic'][name.lower()]
+            with open('dicts.json', 'w') as fp:
+                json.dump(data, fp, sort_keys=True, indent=4)
+            msg = name + " deleted succesfuly"
+        return msg
+    elif typ.lower() == "guide":
+        if name.lower() not in data['guidedic']:
+            msg = name + " don't exist"
+        else:
+            del data['guidedic'][name.lower()]
+            with open('dicts.json', 'w') as fp:
+                json.dump(data, fp, sort_keys=True, indent=4)
+            msg = name + " deleted succesfuly"
+        return msg
+    elif typ.lower() == "legion":
+        if name.lower() not in data['legion']:
+            msg = name + " don't exist"
+        else:
+            del data['legion'][name.lower()]
+            with open('dicts.json', 'w') as fp:
+                json.dump(data, fp, sort_keys=True, indent=4)
+            msg = name + " deleted succesfuly"
+        return msg
+
 def randomResponse():
     responses = data["respuestas_standard"]
     quantityOfResponses = len(responses)
@@ -256,6 +345,24 @@ async def ayuda(ctx):
     msg = ('{0.author.mention} \n AYUDA\n cosmo lista -> lista los nombres de los cosmos\n cosmo nombre de cosmo -> muestra los dias y lugares del cosmo\n cosmo hoy/dia de la semana -> muestra los cosmos que salen ese dia\n guia lista -> lista los nombres de los personajes\n guia nombre del personaje -> muestra el video del analisis del personaje\n legión # -> muestra el nombre del lider de la legión en el servidor\n info lista -> lista las infografías disponibles\n info nombre del personaje -> muestra la infografía del personaje')
     msg = msg.format(ctx.message)
     await ctx.send(msg)
+
+@bot.command(pass_context=True)
+async def add(ctx, typ = None, name = None, data = None):
+    if ("MrJester#8682" == str(ctx.author)) or ("jamesj28#3931" == str(ctx.author)) or ("Gederico#5402" == str(ctx.author)):
+        msg = add_data(typ,name,data)
+        await ctx.send(msg)
+    else:
+        msg = "No hago caso a insectos."
+        await ctx.send(msg)
+
+@bot.command(pass_context=True)
+async def delete(ctx, typ = None, name = None):
+    if ("MrJester#8682" == str(ctx.author)) or ("jamesj28#3931" == str(ctx.author)) or ("Gederico#5402" == str(ctx.author)):
+        msg = del_data(typ,name,data)
+        await ctx.send(msg)
+    else:
+        msg = "No hago caso a insectos."
+        await ctx.send(msg)
 
 @bot.command(pass_context=True)
 async def info(ctx, * , arg = None):
