@@ -3,6 +3,7 @@ import discord
 import os
 import datetime
 import langdetect
+import subprocess
 from discord.ext import commands
 from dotenv import load_dotenv
 from langdetect import detect
@@ -11,7 +12,7 @@ load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 prefix = ['silla-san ','silla san ','Silla-san ','Silla-San ','Silla san ','Silla San ','SILLA SAN ','SILLA-SAN ','silla-sama ','silla sama','Silla-sama ','Silla-Sama ','Silla sama ','Silla Sama ','SILLA SAMA ','SILLA-SAMA ']
 prefixes = ['silla san','silla-san','silla sama','silla-sama']
-comms = ['help','ayuda','guia','guide','cosmo','legion','guía','legión','info','add','delete']
+comms = ['help','ayuda','guia','guide','cosmo','legion','guía','legión','info','add','delete','del','remove','rem']
 import time
 import threading
 import json
@@ -240,6 +241,7 @@ def add_data(typ,name,link):
             data['info'][name.lower()] = link
             with open('dicts.json', 'w') as fp:
                 json.dump(data, fp, sort_keys=True, indent=4)
+            addf = subprocess.Popen("git add dicts.json && git commit -m 'command add info' && git push -u origin master",shell=True)
             msg = name + " added succesfuly"
         return msg
     elif typ.lower() == "guia":
@@ -249,6 +251,7 @@ def add_data(typ,name,link):
             data['guiadic'][name.lower()] = link
             with open('dicts.json', 'w') as fp:
                 json.dump(data, fp, sort_keys=True, indent=4)
+            addf = subprocess.Popen("git add dicts.json && git commit -m 'command add guia' && git push -u origin master",shell=True)
             msg = name + " added succesfuly"
         return msg
     elif typ.lower() == "guide":
@@ -258,6 +261,7 @@ def add_data(typ,name,link):
             data['guidedic'][name.lower()] = link
             with open('dicts.json', 'w') as fp:
                 json.dump(data, fp, sort_keys=True, indent=4)
+            addf = subprocess.Popen("git add dicts.json && git commit -m 'command add guide' && git push -u origin master",shell=True)
             msg = name + " added succesfuly"
         return msg
     elif typ.lower() == "legion":
@@ -267,6 +271,7 @@ def add_data(typ,name,link):
             data['legion'][name.lower()] = link
             with open('dicts.json', 'w') as fp:
                 json.dump(data, fp, sort_keys=True, indent=4)
+            addf = subprocess.Popen("git add dicts.json && git commit -m 'command add legion' && git push -u origin master",shell=True)
             msg = name + " added succesfuly"
         return msg
 
@@ -278,6 +283,7 @@ def del_data(typ,name,link):
             del data['info'][name.lower()]
             with open('dicts.json', 'w') as fp:
                 json.dump(data, fp, sort_keys=True, indent=4)
+            addf = subprocess.Popen("git add dicts.json && git commit -m 'command delete info' && git push -u origin master",shell=True)
             msg = name + " deleted succesfuly"
         return msg
     elif typ.lower() == "guia":
@@ -287,6 +293,7 @@ def del_data(typ,name,link):
             del data['guiadic'][name.lower()]
             with open('dicts.json', 'w') as fp:
                 json.dump(data, fp, sort_keys=True, indent=4)
+            addf = subprocess.Popen("git add dicts.json && git commit -m 'command delete guia' && git push -u origin master",shell=True)
             msg = name + " deleted succesfuly"
         return msg
     elif typ.lower() == "guide":
@@ -296,6 +303,7 @@ def del_data(typ,name,link):
             del data['guidedic'][name.lower()]
             with open('dicts.json', 'w') as fp:
                 json.dump(data, fp, sort_keys=True, indent=4)
+            addf = subprocess.Popen("git add dicts.json && git commit -m 'command delete guide' && git push -u origin master",shell=True)
             msg = name + " deleted succesfuly"
         return msg
     elif typ.lower() == "legion":
@@ -305,6 +313,7 @@ def del_data(typ,name,link):
             del data['legion'][name.lower()]
             with open('dicts.json', 'w') as fp:
                 json.dump(data, fp, sort_keys=True, indent=4)
+            addf = subprocess.Popen("git add dicts.json && git commit -m 'command delete legion' && git push -u origin master",shell=True)
             msg = name + " deleted succesfuly"
         return msg
 
@@ -355,7 +364,7 @@ async def add(ctx, typ = None, name = None, data = None):
         msg = "No hago caso a insectos."
         await ctx.send(msg)
 
-@bot.command(pass_context=True)
+@bot.command(pass_context=True, aliases=['remove', 'del', 'rem'])
 async def delete(ctx, typ = None, name = None):
     if ("MrJester#8682" == str(ctx.author)) or ("jamesj28#3931" == str(ctx.author)) or ("Gederico#5402" == str(ctx.author)):
         msg = del_data(typ,name,data)
