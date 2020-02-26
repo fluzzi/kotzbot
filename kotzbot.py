@@ -46,9 +46,11 @@ def get_cosmo(cosmo):
             'Lunes': 1,
             'Martes': 2,
             'Miercoles': 3,
+            'Miércoles': 3,
             'Jueves': 4,
             'Viernes': 5,
             'Sabado': 6,
+            'Sábado': 6,
             'Domingo': 7
         }
     day = {
@@ -63,10 +65,10 @@ def get_cosmo(cosmo):
     dia = {
             1: 'Lunes',
             2: 'Martes',
-            3: 'Miercoles',
+            3: 'Miércoles',
             4: 'Jueves',
             5: 'Viernes',
-            6: 'Sabado',
+            6: 'Sábado',
             7: 'Domingo'
         }
     dya = {
@@ -100,6 +102,10 @@ def get_cosmo(cosmo):
         return get_today('es')
     if cosmo.lower() == 'today':
         return get_today('en')
+    if cosmo.lower() == 'mañana':
+        return get_today('es', datetime.datetime.today().isoweekday() + 1)
+    if cosmo.lower() == 'tomorrow':
+        return get_today('en', datetime.datetime.today().isoweekday() + 1)
     if cosmo.lower().capitalize() in diac:
         return get_today('es',diac[cosmo.lower().capitalize()])
     if cosmo.lower().capitalize() in dayc:
@@ -182,7 +188,9 @@ def get_guide(char,lang):
             return 0
         return
 
-def get_today(lang,date = datetime.datetime.today().isoweekday()):
+def get_today(lang,date = "" ):
+    if date == "":
+        date = datetime.datetime.today().isoweekday()
     if lang == "es":
         titans = "\nTitanes: "
         shrine = "Altar: "
@@ -345,13 +353,13 @@ async def on_ready():
 
 @bot.command(pass_context=True)
 async def help(ctx):
-    msg = ('{0.author.mention} \n HELP\n cosmo list -> get list of cosmo names\n cosmo name of cosmo -> get cosmo release date and location\n cosmo today/weekday -> get cosmo released on specific day\n guide list -> get list of characters name\n guide character name -> get character youtube guide\n legion # -> leader info of legion on specified server\n info character name -> show infography of requested character')
+    msg = ('{0.author.mention} \n HELP\n cosmo list -> get list of cosmo names\n cosmo name of cosmo -> get cosmo release date and location\n cosmo today/tomorrow/weekday -> get cosmo released on specific day\n guide list -> get list of characters name\n guide character name -> get character youtube guide\n legion # -> leader info of legion on specified server\n info character name -> show infography of requested character')
     msg = msg.format(ctx.message)
     await ctx.send(msg)
 
 @bot.command(pass_context=True)
 async def ayuda(ctx):
-    msg = ('{0.author.mention} \n AYUDA\n cosmo lista -> lista los nombres de los cosmos\n cosmo nombre de cosmo -> muestra los dias y lugares del cosmo\n cosmo hoy/dia de la semana -> muestra los cosmos que salen ese dia\n guia lista -> lista los nombres de los personajes\n guia nombre del personaje -> muestra el video del analisis del personaje\n legión # -> muestra el nombre del lider de la legión en el servidor\n info lista -> lista las infografías disponibles\n info nombre del personaje -> muestra la infografía del personaje')
+    msg = ('{0.author.mention} \n AYUDA\n cosmo lista -> lista los nombres de los cosmos\n cosmo nombre de cosmo -> muestra los dias y lugares del cosmo\n cosmo hoy/mañana/dia de la semana -> muestra los cosmos que salen ese dia\n guia lista -> lista los nombres de los personajes\n guia nombre del personaje -> muestra el video del analisis del personaje\n legión # -> muestra el nombre del lider de la legión en el servidor\n info lista -> lista las infografías disponibles\n info nombre del personaje -> muestra la infografía del personaje')
     msg = msg.format(ctx.message)
     await ctx.send(msg)
 
