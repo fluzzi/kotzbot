@@ -403,6 +403,14 @@ async def admins(ctx, * , arg = None):
         msg = get_admins()
         await ctx.send(msg)
 
+@bot.command(pass_context=True)
+async def add(ctx, typ = None, name = None, datos = None):
+    if ( typ in data['admins'][str(ctx.author)] ):
+        msg = add_data(str(ctx.author),typ,name,datos)
+        await ctx.send(msg)
+    else:
+        msg = "No hago caso a insectos."
+
 @bot.command(pass_context=True, aliases=['remove', 'del', 'rem'])
 async def delete(ctx, typ = None, name = None):
     if ( typ in data['admins'][str(ctx.author)] ):
