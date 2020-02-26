@@ -1,4 +1,28 @@
 {
+    "admins": {
+        "Gederico#5402": [
+            "cosmo",
+            "guia",
+            "guide",
+            "legion"
+        ],
+        "MrJester#8682": [
+            "guia",
+            "guide",
+            "info",
+            "legion"
+        ],
+        "jamesj28#3931": [
+            "cosmo",
+            "guia",
+            "guide",
+            "info",
+            "legion"
+        ],
+        "zeltty#8081": [
+            "legion"
+        ]
+    },
     "cdays": {
         "2hornsnake": 21171,
         "astick": 25062,
@@ -227,7 +251,8 @@
         "shaka": "https://youtu.be/pyerg0BiGOE",
         "shion": "https://youtu.be/PeTHpvP_rAU",
         "shura": "https://youtu.be/jWgzAyxnYsY",
-        "taurus": "https://youtu.be/cuGPBJ9wEsI"
+        "taurus": "https://youtu.be/cuGPBJ9wEsI",
+        "test": "test"
     },
     "info": {
         "acuario": "http://bit.ly/37EBj2N",
