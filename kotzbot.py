@@ -12,7 +12,7 @@ load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 prefix = ['silla-san ','silla san ','Silla-san ','Silla-San ','Silla san ','Silla San ','SILLA SAN ','SILLA-SAN ','silla-sama ','silla sama','Silla-sama ','Silla-Sama ','Silla sama ','Silla Sama ','SILLA SAMA ','SILLA-SAMA ']
 prefixes = ['silla san','silla-san','silla sama','silla-sama']
-comms = ['help','ayuda','guia','guide','cosmo','legion','guía','legión','info','add','delete','del','remove','rem']
+comms = ['help','ayuda','guia','guide','cosmo','legion','guía','legión','info','add','delete','del','remove','rem','admins']
 import time
 import threading
 import json
@@ -151,7 +151,6 @@ def get_cosmo(cosmo):
         result = 0
     return (result)
 
-
 def get_info(char):
     todos = ""
     if char.lower() == 'lista':
@@ -228,6 +227,12 @@ def get_today(lang,date = "" ):
     titans = titans.rstrip(' ').rstrip(',')
     shrine = shrine.rstrip(' ').rstrip(',')
     result = titans + '\n' + shrine
+    return result
+
+def get_admins():
+    result = ""
+    for key in data['admins']:
+        result = result + key + ': [ ' + " , ".join(data['admins'][key]) + ' ]\n'
     return result
 
 def get_legion(server = ""):
@@ -394,12 +399,8 @@ async def ayuda(ctx):
     await ctx.send(msg)
 
 @bot.command(pass_context=True)
-async def add(ctx, typ = None, name = None, datos = None):
-    if ( typ in data['admins'][str(ctx.author)] ):
-        msg = add_data(str(ctx.author),typ,name,datos)
-        await ctx.send(msg)
-    else:
-        msg = "No hago caso a insectos."
+async def admins(ctx, * , arg = None):
+        msg = get_admins()
         await ctx.send(msg)
 
 @bot.command(pass_context=True, aliases=['remove', 'del', 'rem'])
