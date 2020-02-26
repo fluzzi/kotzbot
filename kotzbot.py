@@ -272,6 +272,16 @@ def add_data(typ,name,link):
             addf = subprocess.Popen("git add dicts.json && git commit -m 'command add guide' && git push -u origin master",shell=True)
             msg = name + " added succesfuly"
         return msg
+    elif typ.lower() == "admins":
+        if name in data['admins']:
+            msg = name + " already exist"
+        else:
+            data['admins'][name] = link.lower().split()
+            with open('dicts.json', 'w') as fp:
+                json.dump(data, fp, sort_keys=True, indent=4)
+            addf = subprocess.Popen("git add dicts.json && git commit -m 'command add legion' && git push -u origin master",shell=True)
+            msg = name + " added succesfuly"
+        return msg
     elif typ.lower() == "legion":
         if name.lower() in data['legion']:
             msg = name + " already exist"
@@ -319,6 +329,16 @@ def del_data(typ,name,link):
             msg = name + " don't exist"
         else:
             del data['legion'][name.lower()]
+            with open('dicts.json', 'w') as fp:
+                json.dump(data, fp, sort_keys=True, indent=4)
+            addf = subprocess.Popen("git add dicts.json && git commit -m 'command delete legion' && git push -u origin master",shell=True)
+            msg = name + " deleted succesfuly"
+        return msg
+    elif typ.lower() == "admins":
+        if name not in data['admins']:
+            msg = name + " don't exist"
+        else:
+            del data['admins'][name]
             with open('dicts.json', 'w') as fp:
                 json.dump(data, fp, sort_keys=True, indent=4)
             addf = subprocess.Popen("git add dicts.json && git commit -m 'command delete legion' && git push -u origin master",shell=True)
