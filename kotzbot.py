@@ -410,6 +410,7 @@ async def add(ctx, typ = None, name = None, datos = None):
         await ctx.send(msg)
     else:
         msg = "No hago caso a insectos."
+        await ctx.send(msg)
 
 @bot.command(pass_context=True, aliases=['remove', 'del', 'rem'])
 async def delete(ctx, typ = None, name = None):
