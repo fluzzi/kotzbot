@@ -364,9 +364,9 @@ async def ayuda(ctx):
     await ctx.send(msg)
 
 @bot.command(pass_context=True)
-async def add(ctx, typ = None, name = None, data = None):
-    if ("MrJester#8682" == str(ctx.author)) or ("jamesj28#3931" == str(ctx.author)) or ("Gederico#5402" == str(ctx.author)):
-        msg = add_data(typ,name,data)
+async def add(ctx, typ = None, name = None, datos = None):
+    if ( typ in data['admins'][str(ctx.author)] ):
+        msg = add_data(typ,name,datos)
         await ctx.send(msg)
     else:
         msg = "No hago caso a insectos."
@@ -374,7 +374,7 @@ async def add(ctx, typ = None, name = None, data = None):
 
 @bot.command(pass_context=True, aliases=['remove', 'del', 'rem'])
 async def delete(ctx, typ = None, name = None):
-    if ("MrJester#8682" == str(ctx.author)) or ("jamesj28#3931" == str(ctx.author)) or ("Gederico#5402" == str(ctx.author)):
+    if ( typ in data['admins'][str(ctx.author)] ):
         msg = del_data(typ,name,data)
         await ctx.send(msg)
     else:
