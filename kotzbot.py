@@ -425,7 +425,7 @@ async def delete(ctx, typ = None, name = None):
 async def info(ctx, * , arg = None):
     real = get_info(arg)
     if real == 0:
-        await ctx.send('Infografía invalida...')
+        await ctx.send('Infografía invalida...\n Prueba con el comando "info lista" para conocer las infografias disponibles.')
         return
     else:
         msg = ('{0.author.mention} Infografía ' + arg.capitalize() + ':\n' + real)
@@ -436,7 +436,7 @@ async def info(ctx, * , arg = None):
 async def guia(ctx, * , arg = None):
     real = get_guide(arg,"es")
     if real == 0:
-        await ctx.send('Guia invalida...')
+        await ctx.send('Guia invalida...\n Prueba con el comando "guia lista" para conocer las guias disponibles.')
         return
     else:
         msg = ('{0.author.mention} Guia ' + arg.capitalize() + ':\n' + real)
@@ -447,7 +447,7 @@ async def guia(ctx, * , arg = None):
 async def guide(ctx, * , arg = None):
     real = get_guide(arg,"en")
     if real == 0:
-        await ctx.send('Invalid guide...')
+        await ctx.send('Invalid guide...\n Try with "guide list" command to get the available guides.')
         return
     else:
         msg = ('{0.author.mention} Guide ' + arg.capitalize() + ':\n' + real)
@@ -458,7 +458,7 @@ async def guide(ctx, * , arg = None):
 async def cosmo(ctx, *, arg = None):
     real = get_cosmo(arg)
     if real == 0:
-        await ctx.send('Invalid cosmo...')
+        await ctx.send('Invalid cosmo...\n Try with "cosmo list" command to get the available cosmos.\n Prueba con el comando "cosmo lista" para conocer los cosmos disponibles.')
         return
     else:
         msg = ('{0.author.mention} Cosmo ' + arg.capitalize() + ':' + real)
