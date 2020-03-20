@@ -153,36 +153,39 @@ def get_cosmo(cosmo):
 
 def get_info(char):
     todos = ""
-    if char.lower() == 'lista':
+    if 'lista' in char or 'list' in char:
         for key in data['info']:
             todos = todos + key + ', '
         todos = todos.rstrip(' ').rstrip(',')
-        return todos
-    elif char.lower() in data['info']:
-        return data['info'][char.lower()]
+        return [todos,"lista"]
+    charmatch = intersection(char,data['info'])
+    if charmatch:
+        return [data['info'][charmatch[0]],charmatch[0]]
     else:
          return 0
 
 def get_guide(char,lang):
     todos = ""
     if lang == "en":
-        if char.lower() == 'list':
+        if 'list' in char:
             for key in data['guidedic']:
                 todos = todos + key + ', '
             todos = todos.rstrip(' ').rstrip(',')
-            return todos
-        elif char.lower() in data['guidedic']:
-            return data['guidedic'][char.lower()]
+            return [todos,"list"]
+        charmatch = intersection(char,data['guidedic'])
+        if charmatch:
+            return [data['guidedic'][charmatch[0]],charmatch[0]]
         else:
             return 0
     elif lang == "es":
-        if char.lower() == 'lista':
+        if 'lista' in char:
             for key in data['guiadic']:
                 todos = todos + key + ', '
             todos = todos.rstrip(' ').rstrip(',')
-            return todos
-        elif char.lower() in data['guiadic']:
-            return data['guiadic'][char.lower()]
+            return [todos,"lista"]
+        charmatch = intersection(char,data['guiadic'])
+        if charmatch:
+            return [data['guiadic'][charmatch[0]],charmatch[0]]
         else:
             return 0
         return
@@ -382,6 +385,17 @@ def getResponseToQuestion(text):
     indexOfSelectedResponse = randint(0, quantityOfResponses - 1)
     return responses[indexOfSelectedResponse]
 
+def getSin(text):
+    lst = [val for key, val in data["sinonimo"].items() if text in val]
+    if lst:
+        return lst[0]
+    else:
+        return [text]
+
+def intersection(lst1, lst2):
+    lst3 = [value for value in lst1 if value in lst2]
+    return lst3
+
 @bot.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(bot))
@@ -423,34 +437,34 @@ async def delete(ctx, typ = None, name = None):
 
 @bot.command(pass_context=True)
 async def info(ctx, * , arg = None):
-    real = get_info(arg)
+    real = get_info(getSin(arg.lower()))
     if real == 0:
         await ctx.send('Infografía invalida...\n Prueba con el comando "info lista" para conocer las infografias disponibles.')
         return
     else:
-        msg = ('{0.author.mention} Infografía ' + arg.capitalize() + ':\n' + real)
+        msg = ('{0.author.mention} Infografía ' + real[1].capitalize() + ':\n' + real[0])
         msg = msg.format(ctx.message)
         await ctx.send(msg)
 
 @bot.command(pass_context=True, aliases=['guía'])
 async def guia(ctx, * , arg = None):
-    real = get_guide(arg,"es")
+    real = get_guide(getSin(arg.lower()),"es")
     if real == 0:
         await ctx.send('Guia invalida...\n Prueba con el comando "guia lista" para conocer las guias disponibles.')
         return
     else:
-        msg = ('{0.author.mention} Guia ' + arg.capitalize() + ':\n' + real)
+        msg = ('{0.author.mention} Guía ' + real[1].capitalize() + ':\n' + real[0])
         msg = msg.format(ctx.message)
         await ctx.send(msg)
 
 @bot.command(pass_context=True)
 async def guide(ctx, * , arg = None):
-    real = get_guide(arg,"en")
+    real = get_guide(getSin(arg.lower()),"en")
     if real == 0:
         await ctx.send('Invalid guide...\n Try with "guide list" command to get the available guides.')
         return
     else:
-        msg = ('{0.author.mention} Guide ' + arg.capitalize() + ':\n' + real)
+        msg = ('{0.author.mention} Guide ' + real[1].capitalize() + ':\n' + real[0])
         msg = msg.format(ctx.message)
         await ctx.send(msg)
 
