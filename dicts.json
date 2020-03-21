@@ -214,6 +214,7 @@
         "poseid\u00f3n": "https://youtu.be/J4JpU3WxzOM",
         "radamantis": "https://youtu.be/mxp0pe2r9L4",
         "saga": "https://youtu.be/HeSzQ-3o9a4",
+        "saga maligno": "https://www.youtube.com/watch?v=RrdpSkkkyZg",
         "saori": "https://youtu.be/69CAMS5qTck",
         "seiya armadura divina": "https://youtu.be/kfjGSMYct0s",
         "seiya flecha dorada": "https://youtu.be/_zrSvcpRZ9k",
@@ -367,41 +368,6 @@
         "e8": "Rodgrx44 (RodriSP)",
         "e9": "Shakaito"
     },
-    "sinonimo": {
-        "aries": ["mu","mu de aries","aries","aries mu"],
-        "tauro":["aldebaran","aldebaran de tauro","tauro","vaca","taurus","taurus aldebaran"],
-        "geminis":["saga","saga de géminis","géminis","geminis","gemini","gemini saga"],
-        "leo":["aioria","aiolia","aioria de leo","aiolia de leo","leo","leo aiolia","leo aioria"],
-        "escorpio":["milo","milo de escorpio","escorpio","scorpio","scorpio milo"],
-        "acuario":["camus","camus de acuario","acuario","aquarius","aquarius camus"],
-        "cancer":["mascara de la muerte","mascara de la muerte de cáncer","cáncer","cancer","deathmask","cancer deathmask"],
-        "piscis":["afrodita","afrodita de piscis","piscis","afro","aphrodite","aphro","pisces","pisces aphrodite"],
-        "sagitoario":["aioros","aiolos","aioros de sagitario","aiolos de sagitario","sagitario","sagi","sagittarius","sagittarius aiolos"],
-        "capricornio":["shura","shura de capricornio","capricornio","capri","capricorn","capricorn shura"],
-        "virgo":["shaka","shaka de virgo","virgo","shaka chimbo","shaka tonto","virgo shaka"],
-        "libra":["dohko","dohko de libra","libra","libra dhoko"],
-        "shion":["shion","shion de aries","aries shion"],
-        "dc seiya":["seiya divino","dc seiya","pegaso divino","pedazo divino","seiya armadura divina","divine cloth seiya","divine pegasus","dc pegasus"],
-        "dc ikki":["ikki de fénix divino","dc ikki","pollo","pollo caliente","fénix divino,ikki divino","divine cloth ikki","dc fenix","dc phoenix"],
-        "kanon":["kanon","kanon de dragón de mar","karen","dragón de mar","sea dragon","sea dragon kanon"],
-        "araya":["shaka con arayashiki","araya","shaka araya","shaka listo","shiki","arayashiki shaka"],
-        "hades":["hades","hades-sama"],
-        "poseidon":["poseidón","poseidón-sama","poseidon"],
-        "scylla":["escila","scylla","io","eo","eo de escila"],
-        "pope":["patriarca","gran patriarca","pope","grand pope"],
-        "hyoga dorado":["hyoga dorado","golden cygnus hyoga","golden hyoga","ciscne dorado","pato dorado","pato fiestero"],
-        "seiya dorado":["seiya flecha dorada","golden arrow seiya","sagi chimbo"],
-        "isaac":["isaac de kraken","isaac","isaak","kraken","kraken isaak"],
-        "krishna":["krishna","chrysaor krishna","krishna de chrysaor","chrysaor"],
-        "mayura":["mayura","pavo","pavo mayura","mayura baby"],
-        "minos":["minos","minos de griffon","griffon minos","griffon"],
-        "pandora":["pandora","black waifu","dark waifu"],
-        "rada":["radamantis","rhadamanthys","rada","rhada","wyvern","rata","wyvern rhadamanthys","radamantis de wyvern"],
-        "saori":["saori","saori kido","white waifu"],
-        "nebular shun":["nebular shun","shun nebular","shun pedorro","fart shun"],
-        "sorrento":["sorrento","sorrento de sirena","sirena","siren","siren sorrento"],
-        "evil saga":["saga malo","evil saga","saga malvado","pablo"]
-},
     "preguntas": [
         {
             "pregunta": "est\u00e1s ah\u00ed",
@@ -812,5 +778,242 @@
         "Si me dices el resultado de 2170X + 7140 = 11480 pensar\u00e9 en tu pregunta",
         "Sorry me llama mi novia",
         "Puedes formular mejor tu pregunta?"
-    ]
+    ],
+    "sinonimo": {
+        "acuario": [
+            "camus",
+            "camus de acuario",
+            "acuario",
+            "aquarius",
+            "aquarius camus"
+        ],
+        "araya": [
+            "shaka con arayashiki",
+            "araya",
+            "shaka araya",
+            "shaka listo",
+            "shiki",
+            "arayashiki shaka"
+        ],
+        "aries": [
+            "mu",
+            "mu de aries",
+            "aries",
+            "aries mu"
+        ],
+        "cancer": [
+            "mascara de la muerte",
+            "mascara de la muerte de c\u00e1ncer",
+            "c\u00e1ncer",
+            "cancer",
+            "deathmask",
+            "cancer deathmask"
+        ],
+        "capricornio": [
+            "shura",
+            "shura de capricornio",
+            "capricornio",
+            "capri",
+            "capricorn",
+            "capricorn shura"
+        ],
+        "dc ikki": [
+            "ikki de f\u00e9nix divino",
+            "dc ikki",
+            "pollo",
+            "pollo caliente",
+            "f\u00e9nix divino,ikki divino",
+            "divine cloth ikki",
+            "dc fenix",
+            "dc phoenix"
+        ],
+        "dc seiya": [
+            "seiya divino",
+            "dc seiya",
+            "pegaso divino",
+            "pedazo divino",
+            "seiya armadura divina",
+            "divine cloth seiya",
+            "divine pegasus",
+            "dc pegasus"
+        ],
+        "escorpio": [
+            "milo",
+            "milo de escorpio",
+            "escorpio",
+            "scorpio",
+            "scorpio milo"
+        ],
+        "evil saga": [
+            "saga malo",
+            "evil saga",
+            "saga malvado",
+            "pablo"
+        ],
+        "geminis": [
+            "saga",
+            "saga de g\u00e9minis",
+            "g\u00e9minis",
+            "geminis",
+            "gemini",
+            "gemini saga"
+        ],
+        "hades": [
+            "hades",
+            "hades-sama"
+        ],
+        "hyoga dorado": [
+            "hyoga dorado",
+            "golden cygnus hyoga",
+            "golden hyoga",
+            "ciscne dorado",
+            "pato dorado",
+            "pato fiestero"
+        ],
+        "isaac": [
+            "isaac de kraken",
+            "isaac",
+            "isaak",
+            "kraken",
+            "kraken isaak"
+        ],
+        "kanon": [
+            "kanon",
+            "kanon de drag\u00f3n de mar",
+            "karen",
+            "drag\u00f3n de mar",
+            "sea dragon",
+            "sea dragon kanon"
+        ],
+        "krishna": [
+            "krishna",
+            "chrysaor krishna",
+            "krishna de chrysaor",
+            "chrysaor"
+        ],
+        "leo": [
+            "aioria",
+            "aiolia",
+            "aioria de leo",
+            "aiolia de leo",
+            "leo",
+            "leo aiolia",
+            "leo aioria"
+        ],
+        "libra": [
+            "dohko",
+            "dohko de libra",
+            "libra",
+            "libra dhoko"
+        ],
+        "mayura": [
+            "mayura",
+            "pavo",
+            "pavo mayura",
+            "mayura baby"
+        ],
+        "minos": [
+            "minos",
+            "minos de griffon",
+            "griffon minos",
+            "griffon"
+        ],
+        "nebular shun": [
+            "nebular shun",
+            "shun nebular",
+            "shun pedorro",
+            "fart shun"
+        ],
+        "pandora": [
+            "pandora",
+            "black waifu",
+            "dark waifu"
+        ],
+        "piscis": [
+            "afrodita",
+            "afrodita de piscis",
+            "piscis",
+            "afro",
+            "aphrodite",
+            "aphro",
+            "pisces",
+            "pisces aphrodite"
+        ],
+        "pope": [
+            "patriarca",
+            "gran patriarca",
+            "pope",
+            "grand pope"
+        ],
+        "poseidon": [
+            "poseid\u00f3n",
+            "poseid\u00f3n-sama",
+            "poseidon"
+        ],
+        "rada": [
+            "radamantis",
+            "rhadamanthys",
+            "rada",
+            "rhada",
+            "wyvern",
+            "rata",
+            "wyvern rhadamanthys",
+            "radamantis de wyvern"
+        ],
+        "sagitoario": [
+            "aioros",
+            "aiolos",
+            "aioros de sagitario",
+            "aiolos de sagitario",
+            "sagitario",
+            "sagi",
+            "sagittarius",
+            "sagittarius aiolos"
+        ],
+        "saori": [
+            "saori",
+            "saori kido",
+            "white waifu"
+        ],
+        "scylla": [
+            "escila",
+            "scylla",
+            "io",
+            "eo",
+            "eo de escila"
+        ],
+        "seiya dorado": [
+            "seiya flecha dorada",
+            "golden arrow seiya",
+            "sagi chimbo"
+        ],
+        "shion": [
+            "shion",
+            "shion de aries",
+            "aries shion"
+        ],
+        "sorrento": [
+            "sorrento",
+            "sorrento de sirena",
+            "sirena",
+            "siren",
+            "siren sorrento"
+        ],
+        "tauro": [
+            "aldebaran",
+            "aldebaran de tauro",
+            "tauro",
+            "vaca",
+            "taurus",
+            "taurus aldebaran"
+        ],
+        "virgo": [
+            "shaka",
+            "shaka de virgo",
+            "virgo",
+            "shaka chimbo",
+            "shaka tonto",
+            "virgo shaka"
+        ]
+    }
 }
