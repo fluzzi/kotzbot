@@ -268,9 +268,9 @@ def add_data(editor,typ,name,link):
                 msg = name + ": "+ link + " already exist"
         else:
             if name.lower() not in data['alias']:
-                data['alias'][name.lower()] = [link]
+                data['alias'][name.lower()] = [link.lower()]
             else:
-                data['alias'][name.lower()].append(link)
+                data['alias'][name.lower()].append(link.lower())
             with open('dicts.json', 'w') as fp:
                 json.dump(data, fp, sort_keys=True, indent=4)
             addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
