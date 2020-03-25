@@ -255,6 +255,9 @@
             "taurus",
             "taurus aldebaran"
         ],
+        "test": [
+            "test1"
+        ],
         "virgo": [
             "shaka",
             "shaka de virgo",
