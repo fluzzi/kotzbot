@@ -12,7 +12,7 @@ load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 prefix = ['silla-san ','silla san ','Silla-san ','Silla-San ','Silla san ','Silla San ','SILLA SAN ','SILLA-SAN ','silla-sama ','silla sama','Silla-sama ','Silla-Sama ','Silla sama ','Silla Sama ','SILLA SAMA ','SILLA-SAMA ']
 prefixes = ['silla san','silla-san','silla sama','silla-sama']
-comms = ['help','ayuda','guia','guide','cosmo','legion','guía','legión','info','add','delete','del','remove','rem','admins']
+comms = ['help','ayuda','guia','guide','cosmo','legion','guía','legión','info','add','delete','del','remove','rem','admins','alias']
 import time
 import threading
 import json
@@ -238,6 +238,19 @@ def get_admins():
         result = result + key + ': [ ' + " , ".join(data['admins'][key]) + ' ]\n'
     return result
 
+def get_aliases(char):
+    todos = ""
+    if 'lista' in char or 'list' in char:
+        for key in data['alias']:
+            todos = todos + key + ', '
+        todos = todos.rstrip(' ').rstrip(',')
+        return [todos,"lista"]
+    charmatch = intersection(char,data['alias'])
+    if charmatch:
+        return [data['alias'][charmatch[0]],charmatch[0]]
+    else:
+         return 0
+
 def get_legion(server = ""):
     result = ""
     if server == "lista" or server == "list":
@@ -250,6 +263,20 @@ def get_legion(server = ""):
     return result
 
 def add_data(editor,typ,name,link):
+    if typ.lower() == "alias":
+        if name.lower() in data['alias'] and link.lower() in data['alias'][name.lower()]:
+                msg = name + ": "+ link + " already exist"
+        else:
+            if name.lower() not in data['alias']:
+                data['alias'][name.lower()] = [link]
+            else:
+                data['alias'][name.lower()].append(link)
+            with open('dicts.json', 'w') as fp:
+                json.dump(data, fp, sort_keys=True, indent=4)
+            addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
+            addf = subprocess.Popen(addcommand,shell=True)
+            msg = name + ": "+ link + " added succesfuly"
+        return msg
     if typ.lower() == "info":
         if name.lower() in data['info']:
             msg = name + " already exist"
@@ -307,6 +334,28 @@ def add_data(editor,typ,name,link):
         return msg
 
 def del_data(editor,typ,name,link):
+    if typ.lower() == "alias":
+        if link is not None:
+            if link.lower() not in data['alias'][name.lower()]:
+                msg = name + ": "+ link + " don't exist"
+            else:
+                data['alias'][name.lower()].remove(link.lower())
+                with open('dicts.json', 'w') as fp:
+                    json.dump(data, fp, sort_keys=True, indent=4)
+                addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
+                addf = subprocess.Popen(addcommand,shell=True)
+                msg = name + ": "+ link + " deleted succesfuly"
+        else:
+            if name.lower() not in data['alias']:
+                msg = name + " don't exist"
+            else:
+                del data['alias'][name.lower()]
+                with open('dicts.json', 'w') as fp:
+                    json.dump(data, fp, sort_keys=True, indent=4)
+                addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
+                addf = subprocess.Popen(addcommand,shell=True)
+                msg = name + " deleted succesfuly"
+        return msg
     if typ.lower() == "info":
         if name.lower() not in data['info']:
             msg = name + " don't exist"
@@ -385,8 +434,8 @@ def getResponseToQuestion(text):
     indexOfSelectedResponse = randint(0, quantityOfResponses - 1)
     return responses[indexOfSelectedResponse]
 
-def getSin(text):
-    lst = [val for key, val in data["sinonimo"].items() if text in val]
+def getAlias(text):
+    lst = [val for key, val in data["alias"].items() if text in val]
     if lst:
         return lst[0]
     else:
@@ -418,7 +467,18 @@ async def admins(ctx, * , arg = None):
         await ctx.send(msg)
 
 @bot.command(pass_context=True)
+async def alias(ctx, * , arg = None):
+    real = get_aliases(getAlias(arg.lower()))
+    if real == 0:    
+        await ctx.send('Alias invalido...\n Prueba con el comando "alias lista" para conocer lis alias disponibles.')
+    else:
+        msg = ('{0.author.mention} Alias ' + real[1].capitalize() + ':\n' + str(real[0]))
+        msg = msg.format(ctx.message)
+        await ctx.send(msg)
+
+@bot.command(pass_context=True)
 async def add(ctx, typ = None, name = None, datos = None):
+    typ = "guia" if typ == "guía" else typ
     if ( typ in data['admins'][str(ctx.author)] ):
         msg = add_data(str(ctx.author),typ,name,datos)
         await ctx.send(msg)
@@ -427,9 +487,10 @@ async def add(ctx, typ = None, name = None, datos = None):
         await ctx.send(msg)
 
 @bot.command(pass_context=True, aliases=['remove', 'del', 'rem'])
-async def delete(ctx, typ = None, name = None):
+async def delete(ctx, typ = None, name = None, datos = None):
+    typ = "guia" if typ == "guía" else typ
     if ( typ in data['admins'][str(ctx.author)] ):
-        msg = del_data(str(ctx.author),typ,name,data)
+        msg = del_data(str(ctx.author),typ,name,datos)
         await ctx.send(msg)
     else:
         msg = "No hago caso a insectos."
@@ -437,7 +498,7 @@ async def delete(ctx, typ = None, name = None):
 
 @bot.command(pass_context=True)
 async def info(ctx, * , arg = None):
-    real = get_info(getSin(arg.lower()))
+    real = get_info(getAlias(arg.lower()))
     if real == 0:
         await ctx.send('Infografía invalida...\n Prueba con el comando "info lista" para conocer las infografias disponibles.')
         return
@@ -448,7 +509,7 @@ async def info(ctx, * , arg = None):
 
 @bot.command(pass_context=True, aliases=['guía'])
 async def guia(ctx, * , arg = None):
-    real = get_guide(getSin(arg.lower()),"es")
+    real = get_guide(getAlias(arg.lower()),"es")
     if real == 0:
         await ctx.send('Guia invalida...\n Prueba con el comando "guia lista" para conocer las guias disponibles.')
         return
@@ -459,7 +520,7 @@ async def guia(ctx, * , arg = None):
 
 @bot.command(pass_context=True)
 async def guide(ctx, * , arg = None):
-    real = get_guide(getSin(arg.lower()),"en")
+    real = get_guide(getAlias(arg.lower()),"en")
     if real == 0:
         await ctx.send('Invalid guide...\n Try with "guide list" command to get the available guides.')
         return
