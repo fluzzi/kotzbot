@@ -264,24 +264,43 @@ def get_legion(server = ""):
 
 def add_data(editor,typ,name,link):
     if typ.lower() == "alias":
-        if name.lower() in data['alias'] and link.lower() in data['alias'][name.lower()]:
-                msg = name.lower().capitalize()  + ": "+ link.lower().capitalize() + " already exist"
+        if len(link) > 1:
+            added = 0
+            msg = ""
+            for aliases in link:
+                if name.lower() in data['alias'] and aliases.lower() in data['alias'][name.lower()]:
+                    msg = msg + name.lower().capitalize()  + ": "+ aliases.lower().capitalize() + " already exist\n"
+                else:
+                    if name.lower() not in data['alias']:
+                        data['alias'][name.lower()] = [aliases.lower()]
+                    else:
+                        data['alias'][name.lower()].append(aliases.lower())
+                    with open('dicts.json', 'w') as fp:
+                        json.dump(data, fp, sort_keys=True, indent=4)
+                    msg = msg + name.lower().capitalize() + ": "+ aliases.lower().capitalize() + " added succesfuly\n"
+                    added = added + 1
+            if added > 0:
+                addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
+                addf = subprocess.Popen(addcommand,shell=True)
+            return msg
+        elif name.lower() in data['alias'] and link[0].lower() in data['alias'][name.lower()]:
+                msg = name.lower().capitalize()  + ": "+ link[0].lower().capitalize() + " already exist"
         else:
             if name.lower() not in data['alias']:
-                data['alias'][name.lower()] = [link.lower()]
+                data['alias'][name.lower()] = [link[0].lower()]
             else:
-                data['alias'][name.lower()].append(link.lower())
+                data['alias'][name.lower()].append(link[0].lower())
             with open('dicts.json', 'w') as fp:
                 json.dump(data, fp, sort_keys=True, indent=4)
             addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
             addf = subprocess.Popen(addcommand,shell=True)
-            msg = name.lower().capitalize() + ": "+ link.lower().capitalize() + " added succesfuly"
+            msg = name.lower().capitalize() + ": "+ link[0].lower().capitalize() + " added succesfuly"
         return msg
     if typ.lower() == "info":
         if name.lower() in data['info']:
             msg = name.lower().capitalize() + " already exist"
         else:
-            data['info'][name.lower()] = link
+            data['info'][name.lower()] = link[0]
             with open('dicts.json', 'w') as fp:
                 json.dump(data, fp, sort_keys=True, indent=4)
             addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
@@ -292,7 +311,7 @@ def add_data(editor,typ,name,link):
         if name.lower() in data['guiadic']:
             msg = name.lower().capitalize() + " already exist"
         else:
-            data['guiadic'][name.lower()] = link
+            data['guiadic'][name.lower()] = link[0]
             with open('dicts.json', 'w') as fp:
                 json.dump(data, fp, sort_keys=True, indent=4)
             addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
@@ -303,7 +322,7 @@ def add_data(editor,typ,name,link):
         if name.lower() in data['guidedic']:
             msg = name.lower().capitalize() + " already exist"
         else:
-            data['guidedic'][name.lower()] = link
+            data['guidedic'][name.lower()] = link[0]
             with open('dicts.json', 'w') as fp:
                 json.dump(data, fp, sort_keys=True, indent=4)
             addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
@@ -314,7 +333,7 @@ def add_data(editor,typ,name,link):
         if name.lower() in data['legion']:
             msg = name.lower().capitalize() + " already exist"
         else:
-            data['legion'][name.lower()] = link
+            data['legion'][name.lower()] = link[0]
             with open('dicts.json', 'w') as fp:
                 json.dump(data, fp, sort_keys=True, indent=4)
             addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
@@ -325,7 +344,7 @@ def add_data(editor,typ,name,link):
         if name in data['admins']:
             msg = name + " already exist"
         else:
-            data['admins'][name] = link.lower().split()
+            data['admins'][name] = link[0].lower().split()
             with open('dicts.json', 'w') as fp:
                 json.dump(data, fp, sort_keys=True, indent=4)
             addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
@@ -335,16 +354,32 @@ def add_data(editor,typ,name,link):
 
 def del_data(editor,typ,name,link):
     if typ.lower() == "alias":
-        if link is not None:
-            if link.lower() not in data['alias'][name.lower()]:
-                msg = name.lower().capitalize() + ": "+ link.lower().capitalize() + " don't exist"
+        if len(link) > 1:
+            deleted = 0
+            msg = ""
+            for aliases in link:
+                if aliases.lower() not in data['alias'][name.lower()]:
+                    msg = msg + name.lower().capitalize()  + ": "+ aliases.lower().capitalize() + " don't exist\n"
+                else:
+                    data['alias'][name.lower()].remove(aliases.lower())
+                    with open('dicts.json', 'w') as fp:
+                        json.dump(data, fp, sort_keys=True, indent=4)
+                    msg = msg + name.lower().capitalize() + ": "+ aliases.lower().capitalize() + " deleted succesfuly\n"
+                    deleted = deleted + 1
+            if deleted > 0:
+                addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
+                addf = subprocess.Popen(addcommand,shell=True)
+            return msg
+        elif len(link) == 1:
+            if link[0].lower() not in data['alias'][name.lower()]:
+                msg = name.lower().capitalize() + ": "+ link[0].lower().capitalize() + " don't exist"
             else:
-                data['alias'][name.lower()].remove(link.lower())
+                data['alias'][name.lower()].remove(link[0].lower())
                 with open('dicts.json', 'w') as fp:
                     json.dump(data, fp, sort_keys=True, indent=4)
                 addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
                 addf = subprocess.Popen(addcommand,shell=True)
-                msg = name.lower().capitalize() + ": "+ link.lower().capitalize() + " deleted succesfuly"
+                msg = name.lower().capitalize() + ": "+ link[0].lower().capitalize() + " deleted succesfuly"
         else:
             if name.lower() not in data['alias']:
                 msg = name.lower().capitalize() + " don't exist"
@@ -477,7 +512,7 @@ async def alias(ctx, * , arg = None):
         await ctx.send(msg)
 
 @bot.command(pass_context=True)
-async def add(ctx, typ = None, name = None, datos = None):
+async def add(ctx, typ = None, name = None, *datos):
     typ = "guia" if typ == "guía" else typ
     if ( typ in data['admins'][str(ctx.author)] ):
         msg = add_data(str(ctx.author),typ,name,datos)
@@ -487,7 +522,7 @@ async def add(ctx, typ = None, name = None, datos = None):
         await ctx.send(msg)
 
 @bot.command(pass_context=True, aliases=['remove', 'del', 'rem'])
-async def delete(ctx, typ = None, name = None, datos = None):
+async def delete(ctx, typ = None, name = None, *datos):
     typ = "guia" if typ == "guía" else typ
     if ( typ in data['admins'][str(ctx.author)] ):
         msg = del_data(str(ctx.author),typ,name,datos)
