@@ -30,8 +30,6 @@
             "alias"
         ],
         "test": [
-            "rol1",
-            "rol2",
             "rol3"
         ],
         "zeltty#8081": [
