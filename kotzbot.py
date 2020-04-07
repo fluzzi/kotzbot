@@ -264,37 +264,23 @@ def get_legion(server = ""):
 
 def add_data(editor,typ,name,link):
     if typ.lower() == "alias":
-        if len(link) > 1:
-            added = 0
-            msg = ""
-            for aliases in link:
-                if name.lower() in data['alias'] and aliases.lower() in data['alias'][name.lower()]:
-                    msg = msg + name.lower().capitalize()  + ": "+ aliases.lower().capitalize() + " already exist\n"
-                else:
-                    if name.lower() not in data['alias']:
-                        data['alias'][name.lower()] = [aliases.lower()]
-                    else:
-                        data['alias'][name.lower()].append(aliases.lower())
-                    with open('dicts.json', 'w') as fp:
-                        json.dump(data, fp, sort_keys=True, indent=4)
-                    msg = msg + name.lower().capitalize() + ": "+ aliases.lower().capitalize() + " added succesfuly\n"
-                    added = added + 1
-            if added > 0:
-                addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
-                addf = subprocess.Popen(addcommand,shell=True)
-            return msg
-        elif name.lower() in data['alias'] and link[0].lower() in data['alias'][name.lower()]:
-                msg = name.lower().capitalize()  + ": "+ link[0].lower().capitalize() + " already exist"
-        else:
-            if name.lower() not in data['alias']:
-                data['alias'][name.lower()] = [link[0].lower()]
+        added = 0
+        msg = ""
+        for aliases in link:
+            if name.lower() in data['alias'] and aliases.lower() in data['alias'][name.lower()]:
+                msg = msg + name.lower().capitalize()  + ": "+ aliases.lower().capitalize() + " already exist\n"
             else:
-                data['alias'][name.lower()].append(link[0].lower())
-            with open('dicts.json', 'w') as fp:
-                json.dump(data, fp, sort_keys=True, indent=4)
+                if name.lower() not in data['alias']:
+                    data['alias'][name.lower()] = [aliases.lower()]
+                else:
+                    data['alias'][name.lower()].append(aliases.lower())
+                with open('dicts.json', 'w') as fp:
+                    json.dump(data, fp, sort_keys=True, indent=4)
+                msg = msg + name.lower().capitalize() + ": "+ aliases.lower().capitalize() + " added succesfuly\n"
+                added = added + 1
+        if added > 0:
             addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
             addf = subprocess.Popen(addcommand,shell=True)
-            msg = name.lower().capitalize() + ": "+ link[0].lower().capitalize() + " added succesfuly"
         return msg
     if typ.lower() == "info":
         if name.lower() in data['info']:
@@ -341,20 +327,28 @@ def add_data(editor,typ,name,link):
             msg = name.lower().capitalize() + " added succesfuly"
         return msg
     elif typ.lower() == "admins":
-        if name in data['admins']:
-            msg = name + " already exist"
-        else:
-            data['admins'][name] = link[0].lower().split()
-            with open('dicts.json', 'w') as fp:
-                json.dump(data, fp, sort_keys=True, indent=4)
+        added = 0
+        msg = ""
+        for roles in link:
+            if name in data['admins'] and roles.lower() in data['admins'][name]:
+                msg = msg + name  + ": "+ roles.lower().capitalize() + " already exist\n"
+            else:
+                if name not in data['admins']:
+                    data['admins'][name] = [roles.lower()]
+                else:
+                    data['admins'][name].append(roles.lower())
+                with open('dicts.json', 'w') as fp:
+                    json.dump(data, fp, sort_keys=True, indent=4)
+                msg = msg + name + ": "+ roles.lower().capitalize() + " added succesfuly\n"
+                added = added + 1
+        if added > 0:
             addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
             addf = subprocess.Popen(addcommand,shell=True)
-            msg = name + " added succesfuly"
         return msg
 
 def del_data(editor,typ,name,link):
     if typ.lower() == "alias":
-        if len(link) > 1:
+        if len(link) > 0:
             deleted = 0
             msg = ""
             for aliases in link:
@@ -369,17 +363,6 @@ def del_data(editor,typ,name,link):
             if deleted > 0:
                 addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
                 addf = subprocess.Popen(addcommand,shell=True)
-            return msg
-        elif len(link) == 1:
-            if link[0].lower() not in data['alias'][name.lower()]:
-                msg = name.lower().capitalize() + ": "+ link[0].lower().capitalize() + " don't exist"
-            else:
-                data['alias'][name.lower()].remove(link[0].lower())
-                with open('dicts.json', 'w') as fp:
-                    json.dump(data, fp, sort_keys=True, indent=4)
-                addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
-                addf = subprocess.Popen(addcommand,shell=True)
-                msg = name.lower().capitalize() + ": "+ link[0].lower().capitalize() + " deleted succesfuly"
         else:
             if name.lower() not in data['alias']:
                 msg = name.lower().capitalize() + " don't exist"
@@ -436,16 +419,33 @@ def del_data(editor,typ,name,link):
             msg = name.lower().capitalize() + " deleted succesfuly"
         return msg
     elif typ.lower() == "admins":
-        if name not in data['admins']:
-            msg = name + " don't exist"
+        if len(link) > 0:
+            deleted = 0
+            msg = ""
+            for roles in link:
+                if roles.lower() not in data['admins'][name]:
+                    msg = msg + name  + ": "+ roles.lower().capitalize() + " don't exist\n"
+                else:
+                    data['admins'][name].remove(roles.lower())
+                    with open('dicts.json', 'w') as fp:
+                        json.dump(data, fp, sort_keys=True, indent=4)
+                    msg = msg + name + ": "+ roles.lower().capitalize() + " deleted succesfuly\n"
+                    deleted = deleted + 1
+            if deleted > 0:
+                addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
+                addf = subprocess.Popen(addcommand,shell=True)
         else:
-            del data['admins'][name]
-            with open('dicts.json', 'w') as fp:
-                json.dump(data, fp, sort_keys=True, indent=4)
-            addcommand = "git add dicts.json && git commit -m 'command delete {} {}' && git push -u origin master".format(typ,editor)
-            addf = subprocess.Popen(addcommand,shell=True)
-            msg = name + " deleted succesfuly"
+            if name not in data['admins']:
+                msg = name + " don't exist"
+            else:
+                del data['admins'][name]
+                with open('dicts.json', 'w') as fp:
+                    json.dump(data, fp, sort_keys=True, indent=4)
+                addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
+                addf = subprocess.Popen(addcommand,shell=True)
+                msg = name + " deleted succesfuly"
         return msg
+
 
 def randomResponse():
     responses = data["respuestas_standard"]
