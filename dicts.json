@@ -290,6 +290,9 @@
             "taurus",
             "taurus aldebaran"
         ],
+        "test": [
+            "sos"
+        ],
         "virgo": [
             "shaka",
             "shaka de virgo",
