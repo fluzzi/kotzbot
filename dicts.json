@@ -291,7 +291,8 @@
             "taurus aldebaran"
         ],
         "test": [
-            "sos"
+            "sos",
+            "un"
         ],
         "virgo": [
             "shaka",
