@@ -29,6 +29,9 @@
             "legion",
             "alias"
         ],
+        "test": [
+            "test"
+        ],
         "zeltty#8081": [
             "legion"
         ]
