@@ -361,7 +361,7 @@ def del_data(editor,typ,name,link):
                     msg = msg + name.lower().capitalize() + ": "+ aliases.lower().capitalize() + " deleted succesfuly\n"
                     deleted = deleted + 1
             if deleted > 0:
-                addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
+                addcommand = "git add dicts.json && git commit -m 'command delete {} {}' && git push -u origin master".format(typ,editor)
                 addf = subprocess.Popen(addcommand,shell=True)
         else:
             if name.lower() not in data['alias']:
@@ -370,7 +370,7 @@ def del_data(editor,typ,name,link):
                 del data['alias'][name.lower()]
                 with open('dicts.json', 'w') as fp:
                     json.dump(data, fp, sort_keys=True, indent=4)
-                addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
+                addcommand = "git add dicts.json && git commit -m 'command delete {} {}' && git push -u origin master".format(typ,editor)
                 addf = subprocess.Popen(addcommand,shell=True)
                 msg = name.lower().capitalize() + " deleted succesfuly"
         return msg
@@ -432,7 +432,7 @@ def del_data(editor,typ,name,link):
                     msg = msg + name + ": "+ roles.lower().capitalize() + " deleted succesfuly\n"
                     deleted = deleted + 1
             if deleted > 0:
-                addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
+                addcommand = "git add dicts.json && git commit -m 'command delete {} {}' && git push -u origin master".format(typ,editor)
                 addf = subprocess.Popen(addcommand,shell=True)
         else:
             if name not in data['admins']:
@@ -441,7 +441,7 @@ def del_data(editor,typ,name,link):
                 del data['admins'][name]
                 with open('dicts.json', 'w') as fp:
                     json.dump(data, fp, sort_keys=True, indent=4)
-                addcommand = "git add dicts.json && git commit -m 'command add {} {}' && git push -u origin master".format(typ,editor)
+                addcommand = "git add dicts.json && git commit -m 'command delete {} {}' && git push -u origin master".format(typ,editor)
                 addf = subprocess.Popen(addcommand,shell=True)
                 msg = name + " deleted succesfuly"
         return msg
