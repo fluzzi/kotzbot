@@ -55,6 +55,12 @@
             "aries",
             "aries mu"
         ],
+        "camus": [
+            "aquario",
+            "camus de acuario, acuario",
+            "camus de aquario",
+            "camus"
+        ],
         "cancer": [
             "mascara de la muerte",
             "mascara de la muerte de c\u00e1ncer",
@@ -79,7 +85,8 @@
             "f\u00e9nix divino,ikki divino",
             "divine cloth ikki",
             "dc fenix",
-            "dc phoenix"
+            "dc phoenix",
+            "ikki armadura divina"
         ],
         "dc seiya": [
             "seiya divino",
@@ -292,6 +299,9 @@
             "vaca",
             "taurus",
             "taurus aldebaran"
+        ],
+        "test": [
+            "test"
         ],
         "virgo": [
             "shaka",
